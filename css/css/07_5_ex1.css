@@ -1,0 +1,14 @@
+table {
+    border: 1px solid #000;
+    /* border-collapse: collapse; 표와 테두리를 한 줄로 표시합니다.*/
+    caption-side: bottom;
+    border-spacing: 20px 5px;
+}
+/* 설정값에 대해서는 아래 사이트를 참조바랍니다.
+https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout */
+
+th, td {
+    border: 1px dotted #000;
+    width : 100px;
+}
+

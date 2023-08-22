@@ -1,0 +1,17 @@
+/* 아이디 스타일 */
+#h1-id {
+    color: aqua
+    ;}
+
+/* 클래스 스타일 */
+.h1-1 {
+    color: blue;
+}
+/* 타입 스타일 */
+h1 {
+    color: red;
+}
+
+h1 {
+    color: orange;
+}

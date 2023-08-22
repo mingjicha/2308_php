@@ -1,0 +1,56 @@
+h2 {
+    color: #ff0000;
+    font-size: 1.5em;
+    text-align: center;
+}
+p {
+    font-size: 1.2em;
+    line-height: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+.content {
+    width: 500px;
+    border: 1px solid #000;
+}
+.main {
+    color: #fff;
+    background-color: #000;
+    text-align: start;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    line-height: 2.5;
+    font-weight: lighter;
+    text-indent: 0.5em;
+}
+.accent {
+    color: #0000ff;
+}
+.smalltext {
+    font-size: 0.7em;
+}
+.header {
+    background-image: url(../Img/apple.png);
+    width: 500px;
+    height: 400px;
+    border: 1px solid #000;
+    position: relative;
+}
+.bc-black {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 500px;
+    position: absolute;
+    bottom: 0;
+}
+h1 {
+    color: #fff;
+    margin-left: 1em;
+}
+.co-orange {
+    color: rgb(255, 187, 0);
+    text-align: start;
+    font-size: 1em;
+    font-weight: lighter;
+    margin-left: 1em;
+}

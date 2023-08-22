@@ -1,0 +1,14 @@
+.cook1 {
+    list-style-type: none;
+    list-style-type: decimal;
+    list-style-type: upper-alpha;
+}
+/* 설정값에 대해서는 아래 사이트를 참조바랍니다.
+https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type */
+.cook2 {
+    list-style-type: circle;
+    list-style-position: inside;
+}
+.cook3 {
+    list-style-image: url(../Img/bullet_ball_glass_green.png);
+}
