@@ -1,0 +1,23 @@
+
+.container_1 {
+    border: 5px solid #000;
+    width: 400px;
+    margin: 20px;
+}
+.container_2 {
+    border: 5px solid #000;
+    width: 400px;
+    margin: 20px;
+}
+h1, p {
+    border: 1px solid #000;
+    width: 150px;
+    margin: 10px auto; 
+    /* display 속성에서 지정한 값에 맞게 적절한 값을 자동으로 지정합니다. */
+}
+span {
+    border: 1px solid #000;
+    width: 150px;
+    margin: 10px; 
+}
+/* 세로일 때만 마진 중첩 현상이 일어납니다. */

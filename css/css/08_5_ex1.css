@@ -1,0 +1,67 @@
+main, section, article {
+    padding: 20px;
+}
+main {
+    background-color: lightblue;
+}
+section {
+    background-color: antiquewhite;
+}
+article {
+    background-color: rgb(127, 235, 190);
+    height: 1000px;
+}
+.div_static {
+    background-color: lightgrey;
+    position: static;
+}
+.div_relative {
+    background-color: rgb(255, 137, 255);
+    position: relative;
+    left: -30px;
+    top: -50px;
+}
+.div_absolute {
+    background-color: dimgray;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+/* absolute는 relative값을 사용한 상위 요소를 기준으로 위치를 지정해 배치합니다.
+    형제 요소는 상관없으며, relative값이 없을 경우 최상위 요소로 기준을 둡니다.
+    ex) body - 최상위 요소
+        .div_relative - 형제 요소 */
+.div_fixed {
+    background-color: pink;
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    /* right: 50%;
+    top: 50%; */
+}
+/* fixed는 viewport를 기준으로 위치를 지정해 배치합니다. 
+    body와 같은 크기입니다. */
+.div_sticky {
+    background-color: palevioletred;
+    position: sticky;
+    top: 0;
+}
+/* z-index 속성은 html요소의 배치를 결정합니다. */
+.zindex1 {
+    background-color: rgb(133, 133, 210);
+    width: 100px;
+    position: absolute;
+    z-index: 3;
+}
+.zindex2 {
+    background-color: rgb(211, 129, 161);
+    width: 200px;
+    position: absolute;
+    z-index: 2;
+}
+.zindex3 {
+    background-color: rgb(126, 206, 108);
+    width: 300px;
+    position: absolute;
+    z-index: 1;
+}

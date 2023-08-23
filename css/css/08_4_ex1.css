@@ -1,0 +1,26 @@
+.none {
+    display: none;
+}
+/* none : 해당 요소를 화면에 표시하지 않습니다. 영역 자체가 사라집니다. */
+.block {
+    display: block;
+}
+span {
+    border: 1px solid #000;
+    width: 150px; 
+}
+div {
+    border: 5px solid #000;
+    padding: 10px;
+}
+/* width, height는 블록 레벨에만 사용 가능합니다.
+    인라인 레벨을 블록 레벨로 바꾸면 사용할 수 있습니다.*/
+.inline {
+    border: 1px solid #000;
+    display: inline;
+}
+.inline-block {
+    border: 1px solid #000;
+    width: 150px;
+    display: inline-block;
+}
