@@ -1,0 +1,39 @@
+section {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    text-align: left;
+}
+article {
+    width: 350px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px dotted #ccc;
+    color: #ffffff;
+    float: left;
+}
+footer {
+    background-color: #000;
+    color: #ccc;
+    height: 50px;
+    line-height: 50px;
+    clear: both;
+    text-align: center;
+}
+.home {
+    background-image: url(../Img/dogHome.png);
+    background-size: cover;
+}
+.food {
+    background-image: url(../Img/dogFood.png);
+    background-size: cover;
+}
+.bowl {
+    background-image: url(../Img/dogBowl.png);
+    background-size: cover;
+}
+.nameTag {
+    background-image: url(../Img/dogNameTag.png);
+    background-size: cover;
+}

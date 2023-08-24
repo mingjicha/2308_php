@@ -1,0 +1,24 @@
+.border {
+    background-color: aquamarine;
+    border: 10px dotted #000;
+    background-clip: border-box;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+}
+.padding {
+    background-color: aquamarine;
+    border: 10px dotted #000;
+    background-clip: padding-box;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+}
+.content {
+    background-color: aquamarine;
+    border: 10px dotted #000;
+    background-clip: content-box;
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+}

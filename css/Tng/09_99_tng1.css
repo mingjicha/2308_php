@@ -1,0 +1,43 @@
+body {
+    background-color: #02233b;
+}
+.container {
+    background-color: #fff;
+    width: 500px;
+    height: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    /* background-image: url(../Img/radio.png);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    - background 관련 속성값을 아래처럼 한 줄에 적을 수도 있습니다.
+    background: #fff url(../Img/radio.png) no-repeat right bottom / 70%; */
+}
+h1 {
+    background-color: #004344;
+    color: #fff;
+    width: 500px;
+    height: 80px;
+    line-height: 80px;
+    margin: 0 auto;
+    text-align: center;
+}
+h2 {
+    font-style: italic;
+    text-align: center;
+}
+h3 {
+    color: red;
+}
+ul {
+    list-style: none;
+}
+img {
+    width: 350px;
+    height: 250px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

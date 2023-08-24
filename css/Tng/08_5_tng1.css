@@ -1,0 +1,25 @@
+div {
+    border: 1px solid #000;
+}
+.container {
+    width: 700px;
+    height: 600px;
+    position: relative;
+}
+.position_1, .position_2, .position_3 {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+.position_1 {
+    left: 50px;
+    top: 50px;
+}
+.position_2 {
+    right: 150px;
+    top: 150px
+}
+.position_3 {
+    left: 50px;
+    bottom: 50px;
+}
