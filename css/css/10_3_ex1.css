@@ -1,0 +1,27 @@
+a {
+    color: burlywood;
+}
+a:link {
+    color: red;
+}
+a:visited {
+    color: blueviolet;
+}
+/* a:hover {
+    background-color: violet;
+} */
+#input-1:focus {
+    outline: none;
+    border-color: yellow;
+}
+#input-2:hover {
+    outline: none;
+    border-color: red;
+}
+input:checked + label {
+    color: orange;
+}
+
+#target-1:target {
+    background-color: gray;
+}

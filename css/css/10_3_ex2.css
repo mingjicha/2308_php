@@ -1,0 +1,23 @@
+/* 부모 안에 있는 요소 중 n번째 자식요소를 선택합니다. */
+.container :nth-child(2) {
+    color: slateblue;
+}
+/* 부모 안에 있는 p요소 중 n번째 자식요소를 선택합니다. */
+.container p:nth-of-type(2) {
+    color: orangered;
+}
+/* 부모 안에 있는 p요소를 제외한 자식요소를 선택합니다. */
+.container :not(p) {
+    color: burlywood;
+}
+/* 내용 앞뒤에 콘텐츠를 추가하는 ::before와 ::after */
+#label-1::after {
+    content: '중요';
+    color: red;
+}
+.korean-1::first-letter {
+    background-color: skyblue;
+}
+.korean-2::first-line {
+    background-color: skyblue;
+}

@@ -1,0 +1,18 @@
+/* 상위요소 하위요소 : 하위 선택자 */
+header div span { 
+    color: aqua;
+}
+/* 부모요소 > 자식요소 : 자식 선택자 */
+header>span {
+    color: red;
+} 
+/* 형제요소 + 형제요소 : 인접 형제 선택자 
+    span과 형제인 p요소 중에서 두 번째 p요소를 선택합니다.*/
+main span+p+p {
+    color: blue;
+}
+/* 형제요소 ~ 형제요소 : 형제 선택자 
+    span과 형제인 p요소를 모두 선택합니다.*/
+footer span~p {
+    color: violet;
+}
