@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+fieldset {
+    width: 500px;
+    margin: 0 auto;
+    font-weight: bold;
+    padding: 20px;
+    background-image: url(../Img/radio.png);
+    background-size: cover;
+}
+#name, #age, #memo {
+    background: none;
+}
+legend {
+    color: rgb(247, 80, 191);
+    font-size: 30px;
+}
+.name::before, .age::before, .gender::before{
+    content: "*";
+    color: red;
+}
+
+.memo {
+    /* float: left;
+    margin: 0 7px; */
+    vertical-align: top;
+}
+#name:focus, #age:focus, #memo:focus{
+    outline: none;
+    border-color: red;
+}
+input:checked + label {
+    color: red;
+}
+.check {
+    background-color: #444;
+    color: #fff;
+    font-weight: lighter;
+    display: none;
+    /* width: 250px; */
+    white-space: inherit;
+}
+.submit:hover + .check {
+    display: inline-block;
+}
+/* .submit {
+    position: relative;
+}
+.submit:hover::after {
+    content: '내용을 다시 한 번 입력해 주세요.';
+    background-color: black;
+    color: white;
+    width: 300px;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: 56px;
+} */
