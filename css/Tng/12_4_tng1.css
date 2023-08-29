@@ -1,0 +1,48 @@
+/* 9개의 아이템으로 만드는 방법 */
+/* .container {
+    background-color: gainsboro;
+    margin: 10px;
+    width: 60vw;
+    height: 60vh;
+}
+.item {
+    background-color: cornsilk;
+    width: 150px;
+    height: 15vh;
+    border: 1px solid #000;
+    float: left;
+    box-sizing: border-box;
+}
+.item-h {
+    background-color: transparent;
+    border: none;
+} */
+/* 영역을 row별로 나누어서 만드는 방법 */
+.container {
+    background-color: gainsboro;
+    margin: 10px;
+    width: 60vw;
+    height: 60vh;
+}
+.row {
+    width: 450px;
+    height: 150px;
+}
+.item {
+    background-color: cornsilk;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #000;
+    float: left;
+    box-sizing: border-box;
+}
+.float_left {
+    float: left;
+}
+.float_right {
+    float: right;
+}
+.div_center {
+    float: none;
+    margin: 0 auto;
+}

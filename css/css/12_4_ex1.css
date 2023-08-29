@@ -8,11 +8,18 @@
     flex-wrap: wrap; */
     flex-flow: row wrap;
     /* justify-content: center; */
-    align-items: stretch;
+    /* align-items: stretch; */
+    align-content: space-around;
 }
 .item {
-    width: 15vw;
+    width: 150px;
     height: 15vh;
     background-color: cornsilk;
     border: 1px solid #000;
+    /* 칸이 겹칠 경우 box-sizing 사용 */
+    box-sizing: border-box;
+}
+.item2 {
+    font-size: 30px;
+    align-self: flex-end
 }
