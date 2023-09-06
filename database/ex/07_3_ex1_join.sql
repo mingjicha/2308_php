@@ -3,28 +3,29 @@
 
 -- 1. INNER JOIN의 구조 A ∩ B
 -- 	SELECT 컬럼1, 컬럼2
--- 	FROM 테이블1 INNER JOIN 테이블2
--- 		ON 조인 조건 	** 조인에 조건을 두려면 AND나 OR 사용
--- 	[WHERE 검색조건] 	** 전체 쿼리문에 조건이 붙음
+-- 	FROM 테이블1 
+-- 		INNER JOIN 테이블2
+-- 			ON 조인 조건 	** 조인에 조건을 두려면 AND나 OR 사용
+-- 	[WHERE 검색조건] 	 	** 전체 쿼리문에 조건이 붙음
 
 --  현재 소속된 부서를 찾아주세요.
 SELECT 
 	emp.emp_no
-	, emp.first_name
-	, emp.last_name
-	, dp.dept_no
+	,emp.first_name
+	,emp.last_name
+	,dp.dept_no
 FROM employees emp
 	INNER JOIN dept_emp dp
 		ON emp.emp_no = dp.emp_no
 		AND dp.to_date >= NOW();
 
--- 2. OUTER JOIN  	** A에서 교집합은 값이 나오고 나머지 A부분은 NULL
--- 		: 기준이 되는 테이블의 레코드는 조인의 조건에 만족되지 않아도 출력
--- SELECT 컬럼1, 컬럼2 ...
--- FROM 테이블1
--- 	[ LEFT | RIGHT ] OUTER JOIN 테이블2 	** LEFT - A, RIGHT - B 
--- 		ON 조인 조건
--- WHERE 검색조건;
+-- 2. OUTER JOIN : 기준이 되는 테이블의 레코드는 조인의 조건에 만족되지 않아도 출력
+-- 															** A에서 교집합은 값이 나오고 나머지 A부분은 NULL
+-- 	SELECT 컬럼1, 컬럼2 ...
+-- 	FROM 테이블1
+-- 		[ LEFT | RIGHT ] OUTER JOIN 테이블2 	** LEFT - A, RIGHT - B 
+-- 			ON 조인 조건
+-- 	WHERE 검색조건;
 
 -- 각 부서의 현재 매니저를 찾아주세요.
 SELECT emp.emp_no, emp.first_name, dm.dept_no
@@ -34,3 +35,27 @@ FROM employees emp
 		AND dm.to_date >= NOW()
 -- WHERE dept_no IS NOT NULL;
 WHERE emp.emp_no >= 110000;
+
+-- 3. UNION / UNION ALL : 두 쿼리의 결과를 합침
+-- 								UNION은 중복 값을 제거하고 출력하고, UNION ALL은 중복 값도 출력합니다.
+-- 	SELECT ... FROM ...
+-- 	UNION
+-- 	SELECT ... FROM ...dept_no
+SELECT * FROM employees WHERE emp_no = 10001 OR emp_no = 10005
+UNION
+SELECT * FROM employees WHERE emp_no = 10005;
+
+-- 4. SELF JOIN : 자기 자신을 조인
+-- 	SELECT 컬럼1, 컬럼2 ...
+-- 	FROM 테이블1
+-- 		UNNER JOIN 테이블1
+-- 	WHERE 검색조건;
+
+-- 슈퍼바이저인 사원의 모든 정보를 출력해 주세요.
+-- ALTER TABLE employees ADD COLUMN sup_no INT(11);
+SELECT emp2.*
+FROM employees emp1
+	INNER JOIN employees emp2
+		ON emp1.sup_no = emp2.emp_no;
+
+
