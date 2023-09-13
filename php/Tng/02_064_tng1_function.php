@@ -1,25 +1,50 @@
 <?php
 // 몇 개일지 모르는 숫자를 다 더해주는 함수를 만들어주세요.
-function add(...$num){
-    $total = 0;
-    foreach($num as $val) {
-        // $total = $total + $val;
-        $total += $val;
-    }
-    return $total; // $total은 function 안에서만 사용 가능함 밖에서 $total이면 동명이인일뿐 값은 다름.
-}
-echo add(2, 3, 5, 7);
+// 
 
-// 숫자로 이루어진 문자열을 하나 받습니다.
-// 이 문자열의 모든 숫자를 더해주세요.
-// ex) "3421"일 경우, 3+4+2+1 해서 10이 리턴 되는 함수
-function my_sum($str){
-    $j = 0;
-    $arr = str_split($str);
-    foreach($arr as $key){
-        $j += $key;
-    }
-    return $j;
+// 반복문을 이용해서 아래처럼 출력해 주세요.
+// *
+// **
+// ***
+// ****
+// *****
+
+// for문 사용
+// for($i = 0; $i <= 5; $i++){
+//     for($j = 0; $j <= $i; $j++){
+//     echo "*";
+//      }
+//     echo "\n";
+// }
+
+// while문 사용
+// $cnt = 5;
+// $int_line = 1;
+// $int_star = 1;
+// while($int_line <= $cnt) {
+//     while($int_star <= $int_line) {
+//         echo "*";
+//         $int_star++;
+//     }
+//     echo "\n";
+//     $int_line++;
+//     $int_star = 1;
+// }
+
+//     *
+//    **
+//   ***
+//  ****
+// *****
+$cnt = 5;
+for($int_line = $cnt; $int_line >= 1; $int_line--) {
+    for($int_star = 1; $int_star <= $cnt; $int_star++)
+        if($int_star >= $int_line) {
+            echo "*";}
+        else{
+            echo " ";
+        }
+    echo "\n";
 }
-echo my_sum("3421");
+
 ?>
