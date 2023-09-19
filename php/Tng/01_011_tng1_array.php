@@ -17,4 +17,30 @@ var_dump($food2["pasta"]);
 echo count($food2);
 
 
+
+// foreach *** using php i only want the specific data from array
+// 현업에서 가장 많이 사용하므로 사용법 익히기
+
+$arr = [
+    [
+        "emp_no" => 10001
+        ,"gender" => "F"
+    ] // key [0]
+    ,[
+        "emp_no" => 10002
+        ,"gender" => "M"
+    ] // key [1]
+];
+// 남자인 경우에만 사원번호를 출력해 주세요.
+// 1-1. foreach로 배열 만들어주기 
+foreach ($arr as $key => $item) { // ($arr as $item) 도 가능
+// 1-2. 남자인 경우에만 => if 사용하기
+    if($item["gender"] === "M") {
+// 1-3. 사원번호 출력
+        echo $item["emp_no"];
+    }
+};
+
+
+
 ?>
