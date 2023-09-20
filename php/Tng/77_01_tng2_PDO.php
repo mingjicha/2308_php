@@ -34,19 +34,19 @@ my_db_conn($conn);
 
 // 1. titles 테이블에 데이터가 없는 사원을 검색
 // // 		1-1. 쿼리 
-// 		// SELECT *
+// 		// SELECT * 
 // 		// FROM employees emp
 // 		// WHERE emp.emp_no NOT IN (SELECT tit.emp_no FROM titles tit);
 
 // //		1-2. sql 
 $sql = 
-		" SELECT "
+		" SELECT "  // 정보를 가져오기 위해 SELECT
 		."		* "
 		." FROM "
 		."	    employees emp "
 		." WHERE "
 		."      emp.emp_no "
-		." NOT in ( "
+		." NOT in ( " // in은 속도가 느려서 현업에서는 잘 사용 안함
 		." 		SELECT "
 		." 			tit.emp_no "
 		." 		FROM "
