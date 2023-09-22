@@ -4,7 +4,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-image: url(/mini_board/src/img/hoseb.png);
+	background-image: url(/mini_board/src/img/cat.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 0 140px;
@@ -30,7 +30,7 @@ table {
 td { 
 	border-bottom: 1px solid #000;
 	text-align: center;
-	color: #fff;
+	color: #000000;
 }
 .table-title {
 	border: none;
