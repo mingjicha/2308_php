@@ -85,6 +85,7 @@ function db_select_boards_paging(&$conn, &$arr_param) {
 		$result = $stmt->fetchAll();
 		return $result; // 정상 : 쿼리 결과 리턴
 	} catch(Exception $e) {
+		echo $e->getMessage(); // Exception 메세지 출력
 		return false; // 예외발생 : flase 리턴
 	}
 }
@@ -109,6 +110,7 @@ function db_select_boards_cnt(&$conn) {
 
 			return (int)$result[0]["cnt"]; // 정상 : 쿼리 결과 리턴
 		} catch(Exception $e) {
+			echo $e->getMessage(); // Exception 메세지 출력
 			return false; // 예외발생 : flase 리턴
 		}
 }
@@ -165,18 +167,18 @@ function db_select_boards_id(&$conn, &$arr_param) {
 		." WHERE "
 		." 		id = :id "
 		;
-		$arr_ps = [
+	$arr_ps = [
 			":id" => $arr_param["id"]
-		];
-		try {
-			$stmt = $conn->prepare($sql);
-			$stmt->execute($arr_ps);
-			$result = $stmt->fetchAll();
-			return $result;
-		} catch(Exception $e) {		
-			echo $e->getMessage(); // Exception 메세지 출력
-			return false; // 예외발생 : flase 리턴
-		}
+	];
+	try {
+		$stmt = $conn->prepare($sql);
+		$stmt->execute($arr_ps);
+		$result = $stmt->fetchAll();
+		return $result;
+	} catch(Exception $e) {		
+		echo $e->getMessage(); // Exception 메세지 출력
+		return false; // 예외발생 : flase 리턴
+	}
 
 }
 ?>

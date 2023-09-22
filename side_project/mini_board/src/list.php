@@ -54,8 +54,8 @@ try {
 	$result = db_select_boards_paging($conn, $arr_param);
 
 	if(!$result) {
-		// select 에러
-		throw new Exception("DB Error : SELECT boards"); // 강제 예외 발생
+		// select 게시글 리스트 조회 에러
+		throw new Exception("DB Error : SELECT boards"); // 강제 예외 발생 : SELECT boards
 	}
 } catch(Exception $e) {
 	echo $e->getMessage(); // 예외 발생 메시지 출력
@@ -99,7 +99,7 @@ try {
 				<tr>
 					<td><?php echo $item["id"]; ?></td>
 					<td>
-						<a href="/mini_board/src/detail.php/?id=<?php echo $item["id"]; ?>$page=<?php echo $page; ?>">
+						<a href="/mini_board/src/detail.php/?id=<?php echo $item["id"]; ?>$page=<?php echo $page_num; ?>">
 						<?php echo $item["title"]; ?>
 						<a>
 					</td>

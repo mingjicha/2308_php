@@ -7,8 +7,8 @@ $id = ""; // 게시글 id
 $conn = null; // DB Connect
 try { 
 	// id 확인
-	if(!isset($_GET["id"])) {
-		throw new Exception("parameter ERROR : No id"); // 강제 예외 발생 : 
+	if(!isset($_GET["id"]) || $_GET["id"] === "") {
+		throw new Exception("parameter ERROR : No id"); // 강제 예외 발생 : Parameter Error
 	}
 
 	$id = $_GET["id"]; // id 셋팅
@@ -16,7 +16,7 @@ try {
 	// DB 연결
 	if(!my_db_conn($conn)) {
 		// DB Instance 에러
-		throw new Exception("DB ERROR : No id"); // 강제 예외 발생  
+		throw new Exception("DB Error : PDO Instance"); // 강제 예외 발생  
 	}
 	
 	// 게시글 데이터 조회
@@ -26,12 +26,13 @@ try {
 	$result = db_select_boards_id($conn, $arr_param);
 
 	// 게시글 조회 예외처리
-	if(!$result) {
+	if(!$result === false) {
 		// 게시글 조회 에러
+		var_dump($result);
 		throw new Exception("DB Error : PDO Select_id");
 	} else if(!(count($result) === 1)) {
 		// 게시글 조회 count 에러
-		throw new Exception("DB Error : PDO Select_id count,".count($result));
+		throw new Exception("DB Error : PDO Select_id count, ".count($result));
 	}
 	$item = $result[0];
 } catch(Exception $e) {
@@ -40,9 +41,6 @@ try {
 } finally {
 	db_destroy_conn($conn); // DB 파기
 }
-
-
-$input_id = $_GET["id"];
 
 
 ?>
@@ -58,7 +56,7 @@ $input_id = $_GET["id"];
 </head>
 <body>
 	<?php
-	require_once(FILE_HEADER);
+		require_once(FILE_HEADER);
 	?>
 	<table>
 		<tr>
