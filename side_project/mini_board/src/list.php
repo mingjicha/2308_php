@@ -99,7 +99,7 @@ try {
 				<tr>
 					<td><?php echo $item["id"]; ?></td>
 					<td>
-						<a href="/mini_board/src/detail.php/?id=<?php echo $item["id"]; ?>$page=<?php echo $page_num; ?>">
+						<a href="/mini_board/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
 						<?php echo $item["title"]; ?>
 						<a>
 					</td>

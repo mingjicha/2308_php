@@ -5,10 +5,10 @@ require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
 $id = ""; // 게시글 id
 $conn = null; // DB Connect
-try { 
+try {
 	// id 확인
 	if(!isset($_GET["id"]) || $_GET["id"] === "") {
-		throw new Exception("parameter ERROR : No id"); // 강제 예외 발생 : Parameter Error
+		throw new Exception("Parameter ERROR : No id"); // 강제 예외 발생 : Parameter ERROR
 	}
 
 	$id = $_GET["id"]; // id 셋팅
@@ -16,17 +16,17 @@ try {
 	// DB 연결
 	if(!my_db_conn($conn)) {
 		// DB Instance 에러
-		throw new Exception("DB Error : PDO Instance"); // 강제 예외 발생  
+		throw new Exception("DB Error : PDO Instance");
 	}
-	
+
 	// 게시글 데이터 조회
 	$arr_param = [
-		"id" => $id	
+		"id" => $id
 	];
 	$result = db_select_boards_id($conn, $arr_param);
 
 	// 게시글 조회 예외처리
-	if(!$result === false) {
+	if($result === false) {
 		// 게시글 조회 에러
 		var_dump($result);
 		throw new Exception("DB Error : PDO Select_id");
@@ -36,15 +36,13 @@ try {
 	}
 	$item = $result[0];
 } catch(Exception $e) {
-	echo $e->getMessage(); // 예외 메시지 출력
-	exit; // 처리 종료
+	echo $e->getMessage(); // 예외 메세지 출력
+	exit; // 처리종료
 } finally {
 	db_destroy_conn($conn); // DB 파기
 }
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="ko">
