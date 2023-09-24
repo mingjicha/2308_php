@@ -54,7 +54,7 @@ function db_destroy_conn(&$conn) {
 	$conn = null;
 }
 
-// ---------------------------------
+// ------------ ---------------------
 // 함수명   : db_select_boards_paging
 // 기능     : boards paging 조회
 // 파라미터 : PDO		&$conn
@@ -64,16 +64,16 @@ function db_destroy_conn(&$conn) {
 function db_select_boards_paging(&$conn, &$arr_param) {
 	try {
 		$sql = 
-		" SELECT "
-		."		id "
-		."		,title "
-		."		,create_at "
-		." FROM "
-		." 		boards "
-		." ORDER BY "
-		." 		id DESC "
-		." LIMIT :list_cnt OFFSET :offset "
-		;
+			" SELECT "
+			."		id "
+			."		,title "
+			."		,create_at "
+			." FROM "
+			." 		boards "
+			." ORDER BY "
+			." 		id DESC "
+			." LIMIT :list_cnt OFFSET :offset " // list.php on line 56
+			;
 
 		$arr_ps = [
 			":list_cnt" => $arr_param["list_cnt"]
