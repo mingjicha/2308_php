@@ -5,6 +5,7 @@ require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
 $id = ""; // 게시글 id
 $conn = null; // DB Connect
+
 try {
 	// id 확인
 	if(!isset($_GET["id"]) || $_GET["id"] === "") {
@@ -13,6 +14,7 @@ try {
 
 	$id = $_GET["id"]; // id 셋팅
 	$page = $_GET["page"]; // page 셋팅
+	
 	// DB 연결
 	if(!my_db_conn($conn)) {
 		// DB Instance 에러
@@ -74,7 +76,7 @@ try {
 			<td><?php echo $item["create_at"]; ?></td>
 		</tr>
 	</table>
-	<a href="#">수정</a>
+	<a href="/mini_board/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정</a>
 	<a href="/mini_board/src/list.php/?page=<?php echo $page; ?>">취소</a>
 	<a href="#">삭제</a>
 </body>

@@ -19,6 +19,7 @@ try {
 	// ---------------
 	// 페이징 처리
 	// ---------------
+	// https://velog.io/@dpdnjs402/qnwsh7kt 참고 
 	$list_cnt = 5; // 한 페이지 최대 표시할 페이지 수
 	$page_num = 1; // 페이지 번호 초기화 > 초기 세팅
 
@@ -81,7 +82,7 @@ try {
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="mini_board\src\css\common.css">
+	<link rel="stylesheet" href="/mini_board\src\css\common.css">
 	<title>리스트 페이지</title>
 </head>
 <body>
@@ -89,7 +90,7 @@ try {
 		require_once(FILE_HEADER); // 헤더 영역 표시
 	?>
 	<main>
-		<a href="/mini_board/src/insert.php">글 작성</a>
+		<a href="/mini_board/src/insert.php" class="write-btn">글 작성</a>
 		<table>
 			<colgroup>
 				<col width="20%">
@@ -121,17 +122,21 @@ try {
 			?>
 		</table>
 		<section>
-			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $prev_page_num ?>">이전</a>
+			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $prev_page_num; ?>">이전</a>
 
 			<?php 
+				// 사용자가 보고 있는 페이지 수에 색 넣기
+				// for($i = 1; $i <= $max_page_num; $i++) {
+				// 삼항 연산자로 돌리는 식 : 조건 ? 참일 때 처리 : 거짓일 때 처리
 				for($i = 1; $i <= $max_page_num; $i++) {
+					$str = (int)$page_num === $i ? "bk-a" : ""; 
 			?>
-			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $i ?>"><?php echo $i; ?></a>
+			<a class="page-btn <?php echo $str; ?>" href="/mini_board/src/list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>
 			<?php
 				}
 			?>
 
-			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $next_page_num ?>">다음</a>
+			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $next_page_num; ?>">다음</a>
 		</section>
 	</main>
 </body>
