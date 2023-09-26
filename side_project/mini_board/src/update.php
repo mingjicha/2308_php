@@ -99,8 +99,7 @@ try {
     <?php
 		require_once(FILE_HEADER);
 	?>
-    <form action="/mi
-    ni_board/src/update.php" method="post">
+    <form action="/mini_board/src/update.php" method="post">
         <input type="hidden" name="id" value="<?php echo $id ?>">
         <input type="hidden" name="page" value="<?php echo $page ?>">
             <table>

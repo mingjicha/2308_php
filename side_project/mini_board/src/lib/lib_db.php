@@ -1,5 +1,6 @@
 <?php
 // db 관련 정보를 적어두는 파일
+// FLUSH PRIVILEGES; sql에서 새로고침 할 때 사용
 
 // ********************************
 // 파일명 	: 04_107_fnc_db_connect.php
@@ -70,6 +71,8 @@ function db_select_boards_paging(&$conn, &$arr_param) {
 			."		,create_at "
 			." FROM "
 			." 		boards "
+			." WHERE "
+			."		delete_flg = '0' "
 			." ORDER BY "
 			." 		id DESC "
 			." LIMIT :list_cnt OFFSET :offset " // list.php on line 56
@@ -86,7 +89,7 @@ function db_select_boards_paging(&$conn, &$arr_param) {
 		return $result; // 정상 : 쿼리 결과 리턴
 	} catch(Exception $e) {
 		echo $e->getMessage(); // Exception 메세지 출력
-		return false; // 예외발생 : flase 리턴
+		return false; // 예외발생 : false 리턴
 	}
 }
 
@@ -102,6 +105,8 @@ function db_select_boards_cnt(&$conn) {
 		."		COUNT(id) as cnt "
 		." FROM "
 		."		boards "
+		." WHERE "
+		."		delete_flg = '0' "
 		;
 	
 		try {
@@ -111,7 +116,7 @@ function db_select_boards_cnt(&$conn) {
 			return (int)$result[0]["cnt"]; // 정상 : 쿼리 결과 리턴
 		} catch(Exception $e) {
 			echo $e->getMessage(); // Exception 메세지 출력
-			return false; // 예외발생 : flase 리턴
+			return false; // 예외발생 : false 리턴
 		}
 }
 
@@ -144,7 +149,7 @@ function db_insert_boards(&$conn, &$arr_param) {
 		return $result; //  // 정상 : 쿼리 결과 리턴
 	} catch(Exception $e) {
 		echo $e->getMessage(); // Exception 메세지 출력
-		return false; // 예외발생 : flase 리턴
+		return false; // 예외발생 : false 리턴
 	}
 }
 
@@ -166,6 +171,9 @@ function db_select_boards_id(&$conn, &$arr_param) {
 		."		boards "
 		." WHERE "
 		." 		id = :id "
+		// 삭제된 게시글 조회 못하게 하기
+		." AND "
+		." 		delete_flg = '0' "
 		;
 	$arr_ps = [
 			":id" => $arr_param["id"]
@@ -177,7 +185,7 @@ function db_select_boards_id(&$conn, &$arr_param) {
 		return $result;
 	} catch(Exception $e) {		
 		echo $e->getMessage(); // Exception 메세지 출력
-		return false; // 예외발생 : flase 리턴
+		return false; // 예외발생 : false 리턴
 	}
 }
 
@@ -211,8 +219,41 @@ function db_update_boards_id(&$conn, &$arr_param) {
 		return $result;
 	} catch(Exception $e) {		
 		echo $e->getMessage(); // Exception 메세지 출력
-		return false; // 예외발생 : flase 리턴
+		return false; // 예외발생 : false 리턴
 	}
 
+}
+
+// ---------------------------------
+// 함수명   : db_delete_boards_id
+// 기능     : 특정 ID의 레코드 삭제처리
+// 파라미터 : PDO		&$conn
+//			 Array		&$arr_param
+// 리턴     : boolean
+// ---------------------------------
+function db_delete_boards_id(&$conn, &$arr_param) {
+	// 1. sql 작성 (UPDATE)
+	$sql = 
+		" UPDATE "
+		." boards "
+		." SET "
+		." 		delete_at = now() "
+		." 		,delete_flg = '1' "
+		." WHERE "
+		." 		id = :id "
+		;
+		$arr_ps = [
+			":id" => $arr_param["id"]
+		];
+		
+		try {
+			// 2. Query 실행
+			$stmt = $conn->prepare($sql);
+			$result = $stmt->execute($arr_ps);
+			return $result; // 정상종료 : true 리턴
+		} catch (Excetption $e) {
+			echo $e->getMessage();	// Exception 메세지 출력	
+			return false; // 예외발생 : false 리턴
+		}
 }
 ?>
