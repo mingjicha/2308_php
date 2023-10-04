@@ -59,18 +59,22 @@ if($http_method === "POST") {
 	?>
 		<!-- form 양식
 			action(백단. 서버단 주소)에 있는 걸 통해서 input 안에 있는 특정 "이름"이 있는 데이터 내용을 서버로 넘긴다 -->
-	<form action="/mini_board/src/insert.php" method="post">
-		<label for="title">제목 : </label>
-		<input type="text" name="title" id="title" > 
-		<!-- input 짧은 글 -->
-		<br>
-		<label for="content">내용 : </label>
-		<textarea name="content" id="content" cols="30" rows="10"></textarea>
-		<!-- textarea 긴 글 -->
-		<br>
-		<button type="submit">작성</button>
-		<!-- action으로 선언한 서버로 submit(전송) 해준다 -->
-		<a href="/mini_board/src/list.php">취소</a>
-	</form>
+	<div class="sfrom">
+		<form action="/mini_board/src/insert.php" method="post">
+			<label for="title">제목 : </label>
+			<input type="text" name="title" id="title" > 
+			<!-- input 짧은 글 -->
+			<br>
+			<label for="content">내용 : </label>
+			<textarea name="content" id="content" cols="30" rows="10"></textarea>
+			<!-- textarea 긴 글 -->
+			<br>
+			<div class="insert_a">
+				<button class="insert_b" type="submit">작성</button>
+				<!-- action으로 선언한 서버로 submit(전송) 해준다 -->
+				<a class="insert_b" href="/mini_board/src/list.php">취소</a>
+			</div>
+		</form>
+	</diV>
 </body>
 </html>

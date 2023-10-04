@@ -13,6 +13,22 @@
 print_r($_GET);
 print_r($_POST);
 // html 화면으로 보면 array가 세개가 있을 건데 server get post 순으로 나옴
+
+// 쿼리 prepare
+// static
+class Test{
+    public static $tt;
+    public const TT2 = "TT2";
+}
+
+Test::$tt = "a";
+echo "1 : ";
+
+// 앞에 PDO는 상수로 선언되어 있어서 $가 붙지 않았음
+
+// -> => 차이
+// 객체->멤버 
+// 키=>값
 ?>
 
 <!DOCTYPE html>

@@ -129,8 +129,10 @@ try {
     <section>
         <form action="/mini_board/src/delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
-            <button type="submit">동의</button>
-            <a href="/mini_board/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
+            <div class="delete_a">
+                <button class="delete_b" type="submit">동의</button>
+                <a class="delete_b" href="/mini_board/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
+            </div>
         </form>
     </section>
 </body>

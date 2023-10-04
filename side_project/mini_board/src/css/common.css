@@ -32,12 +32,31 @@ header > h1 {
 header h1 a:visited{
 	color:#fff;
 }
+
+.a {
+	margin: 15px;
+	width: 1300px;
+	text-align: right;
+}
+
+.write-btn {
+	width: 80px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	background-color: rgba(59, 59, 59, 0.85);
+	color: #fff;
+	border-radius: 30px;
+	font-size: 1.2rem;
+}
+
 table {
 	border-collapse: collapse;
 	width: 700px;
 	height: 500px;
-	margin: 50px auto;
+	margin: 15px auto;
 	font-size: 1.5rem;
+	
 }
 td { 
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -61,19 +80,68 @@ a {
 	height: 50px;
 	text-align: center;
 	line-height: 50px;
-	background-color: #272727;
+	background-color: rgba(59, 59, 59, 0.85);
 	color: #fff;
 	border-radius: 50px;
 }
 .bk-a {
 	background-color: #dd66f8;
 }
-.write-btn {
-	width: 80px;
-	height: 50px;
+
+.sfrom {
+	margin: 15px;
 	text-align: center;
-	line-height: 50px;
-	background-color: #272727;
-	color: #fff;
+}
+.detail_a {
+	/* display: inline-block; */
+	text-align:center;
+}
+
+.detail_b {
 	border-radius: 30px;
+	padding: 15px;
+	text-align:center;
+	line-height: 25px;
+	color: #fff;
+	background-color: rgba(59, 59, 59, 0.85);
+	border: none;
+}
+.insert_a {
+	text-align:center;
+}
+.insert_b {
+	border-radius: 30px;
+	padding: 15px;
+	text-align:center;
+	line-height: 25px;
+	color: #fff;
+	background-color: rgba(59, 59, 59, 0.85);
+	border: none;
+	font-size: 1rem;
+}
+.delete_a {
+	text-align:center;
+}
+.delete_b {
+	border-radius: 30px;
+	padding: 15px;
+	text-align:center;
+	line-height: 25px;
+	color: #fff;
+	background-color: rgba(59, 59, 59, 0.85);
+	border: none;
+	font-size: 1rem;
+}
+.update_a {
+	text-align:center;
+}
+.update_b {
+	border-radius: 30px;
+	padding: 15px;
+	text-align:center;
+	line-height: 25px;
+	color: #fff;
+	background-color: rgba(59, 59, 59, 0.85);
+	border: none;
+	font-size: 1rem;
 }

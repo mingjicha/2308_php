@@ -123,8 +123,10 @@ try {
         <!-- 수정 확인 버튼 클릭 
              post > update.php
              게시글의 id를 이용해서 update -->
-        <button type="submit">수정확인</button>
-        <a href="/mini_board/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정취소</a>
+        <div class="update_a">
+            <button class="update_b" type="submit">수정확인</button>
+            <a class="update_b" href="/mini_board/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">수정취소</a>
+        </div>
     </form>
 </body>
 </html>

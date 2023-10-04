@@ -90,7 +90,9 @@ try {
 		require_once(FILE_HEADER); // 헤더 영역 표시
 	?>
 	<main>
-		<a href="/mini_board/src/insert.php" class="write-btn">글 작성</a>
+		<div class="a">
+			<a href="/mini_board/src/insert.php" class="write-btn">글 작성</a>
+		</div>
 		<table>
 			<colgroup>
 				<col width="20%">
@@ -122,7 +124,7 @@ try {
 			?>
 		</table>
 		<section>
-			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $prev_page_num; ?>">이전</a>
+			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $prev_page_num; ?>">◀</a>
 
 			<?php 
 				// 사용자가 보고 있는 페이지 수에 색 넣기
@@ -136,7 +138,7 @@ try {
 				}
 			?>
 
-			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $next_page_num; ?>">다음</a>
+			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $next_page_num; ?>">▶</a>
 		</section>
 	</main>
 </body>
