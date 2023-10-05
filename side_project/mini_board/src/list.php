@@ -91,39 +91,41 @@ try {
 		require_once(FILE_HEADER); // 헤더 영역 표시
 	?>
 	<main>
-		<div class="a">
-			<a href="/mini_board/src/insert.php" class="write-btn">글 작성</a>
-		</div>
-		<table>
-			<colgroup>
-				<col width="20%">
-				<col width="50%">
-				<col width="30%">
-			</colgroup>
-			<!-- 게시판 만들기 -->
-			<tr class="table-title">
-				<th>번호</th>
-				<th>제목</th>
-				<th>작성일자</th>
-			</tr>
-			<?php
-				// 리스트를 생성
-				foreach($result as $item) {
-			?>
-				<tr>
-					<td><?php echo $item["id"]; ?></td>
-					<td>
-						<!-- get방식 사용 -->
-						<a href="/mini_board/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
-						<?php echo $item["title"]; ?>
-						<a>
-					</td>
-					<td><?php echo $item["create_at"]; ?></td>
+		<div class="wrap">
+			<div class="a">
+				<a href="/mini_board/src/insert.php" class="write-btn">글 작성</a>
+			</div>
+			<table>
+				<colgroup>
+					<col width="20%">
+					<col width="50%">
+					<col width="30%">
+				</colgroup>
+				<!-- 게시판 만들기 -->
+				<tr class="table-title">
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성일자</th>
 				</tr>
-			<?php
-				} 
-			?>
-		</table>
+				<?php
+					// 리스트를 생성
+					foreach($result as $item) {
+				?>
+					<tr>
+						<td><?php echo $item["id"]; ?></td>
+						<td>
+							<!-- get방식 사용 -->
+							<a href="/mini_board/src/detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
+							<?php echo $item["title"]; ?>
+							<a>
+						</td>
+						<td><?php echo $item["create_at"]; ?></td>
+					</tr>
+				<?php
+					} 
+				?>
+			</table>
+		</div>	
 		<section>
 			<a class="page-btn" href="/mini_board/src/list.php/?page=<?php echo $prev_page_num; ?>">◀</a>
 

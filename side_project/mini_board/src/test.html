@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/common.css">
+	<title>리스트 페이지</title>
+</head>
+<body>
+    <div class="error_up">
+        <P> </P>
+    </div>
+    <form action="/mini_board/src/update.php" method="post">
+        <input type="hidden" name="id">
+        <input type="hidden" name="page">
+            <table>
+                <tr>
+                    <th>글 번호</th>
+                    <td> 67</td>
+                </tr>
+                <tr>
+                    <th>제목</th>
+                    <td>
+                        <input type="text" name="title" class="input_up_tit">
+                    </td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td>
+                        <textarea name="content" id="content" cols="30" rows="10" class="input_up_con">dfd</textarea>    
+                    </td>
+                </tr>
+            </table>
+        <!-- 수정 확인 버튼 클릭 
+             post > update.php
+             게시글의 id를 이용해서 update -->
+        <div class="update_a">
+            <button class="update_b" type="submit">수정확인</button>
+            <a class="update_b" href="/mini_board/src/detail.php/>수정취소</a>
+        </div>
+    </form>
+</body>
+</html>

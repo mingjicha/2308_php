@@ -33,11 +33,14 @@ header h1 a:visited{
 	color:#fff;
 }
 
+.wrap {
+	margin: 15px auto;
+	max-width: 700px;
+}
 .a {
-	margin: 15px;
-	width: 1300px;
 	text-align: right;
 }
+
 
 .write-btn {
 	width: 80px;
@@ -52,11 +55,11 @@ header h1 a:visited{
 
 table {
 	border-collapse: collapse;
-	width: 700px;
+	width: 100%;
 	height: 500px;
 	margin: 15px auto;
 	font-size: 1.5rem;
-	
+	background-color: beige;
 }
 td { 
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -175,3 +178,24 @@ textarea {
 	font-size: 20px;
 	color: rgb(230, 62, 62);
 }
+.input_up_tit {
+	width: 100%;
+	height: 80%;
+	border: none;
+	font-size: 16px;
+	/* background-color: transparent */
+	background-color: rgba(255, 255, 255, 0.6);
+	outline: none;
+}
+
+.input_up_con {
+	width: 100%;
+	height: 90%;
+	border: none;
+	font-size: 16px;
+	resize: none;
+	/* background-color: transparent; */
+	background-color: rgba(255, 255, 255, 0.6);
+	outline: none;
+}
+/* backdrop-filter 참고 https://brunch.co.kr/@skykamja24/505*/
