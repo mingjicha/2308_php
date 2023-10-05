@@ -1,24 +1,40 @@
 <?php
 define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/"); // 웹서버 root 패스 생성
 define("FILE_HEADER", ROOT."header.php"); // 헤더 패스
+define("ERROR_MSG_PARAM", "Parameter Error : %s"); // 파라미터 에러 메세지
 require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
 $id = ""; // 게시글 id
 $conn = null; // DB Connect
+$arr_err_msg = []; // 에러 메세지 저장용
 
 try {
-	// id 확인
-	if(!isset($_GET["id"]) || $_GET["id"] === "") {
-		throw new Exception("Parameter ERROR : No id"); // 강제 예외 발생 : Parameter ERROR
-	}
+	// // id 확인
+	// if(!isset($_GET["id"]) || $_GET["id"] === "") {
+	// 	throw new Exception("Parameter ERROR : No id"); // 강제 예외 발생 : Parameter ERROR
+	// }
 
-	$id = $_GET["id"]; // id 셋팅
-	$page = $_GET["page"]; // page 셋팅
+	// $id = $_GET["id"]; // id 셋팅
+	// $page = $_GET["page"]; // page 셋팅
 	
 	// DB 연결
 	if(!my_db_conn($conn)) {
 		// DB Instance 에러
 		throw new Exception("DB Error : PDO Instance");
+	}
+
+	// 파라미터 획득
+	$id = isset($_GET["id"]) ? $_GET["id"] : ""; // id 셋팅
+	$page = isset($_GET["page"]) ? $_GET["page"] : ""; // page 셋팅
+
+	if($id === "") {
+		$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "id");
+	}
+	if($page === "") {
+		$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "page");
+	}
+	if(count($arr_err_msg) >= 1) {
+		throw new Exception(implode("<br>", $arr_err_msg));
 	}
 
 	// 게시글 데이터 조회
@@ -38,7 +54,8 @@ try {
 	}
 	$item = $result[0];
 } catch(Exception $e) {
-	echo $e->getMessage(); // 예외 메세지 출력
+	// echo $e->getMessage(); // 예외 메세지 출력
+	header("Location: error.php/?err_msg={$e->getMessage()}");
 	exit; // 처리종료
 } finally {
 	db_destroy_conn($conn); // DB 파기
@@ -78,7 +95,7 @@ try {
 	</table>
 	<div class="detail_a">
 		<a class="detail_b" href="/mini_board/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >수정</a>
-		<a class="detail_b" href="/mini_board/src/list.php/?page=<?php echo $page; ?>">취소</a>
+		<a class="detail_b" href="/mini_board/src/list.php/?page=<?php echo $page; ?>">목록</a>
 		<a class="detail_b" href="/mini_board/src/delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >삭제</a>
 	</div>
 </body>

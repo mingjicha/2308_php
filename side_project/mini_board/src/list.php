@@ -68,7 +68,8 @@ try {
 		throw new Exception("DB Error : SELECT boards"); // 강제 예외 발생 : SELECT boards
 	}
 } catch(Exception $e) {
-	echo $e->getMessage(); // 예외 발생 메시지 출력
+	// echo $e->getMessage(); // 예외 발생 메시지 출력
+	header("Location: error.php/?err_msg={$e->getMessage()}");
 	exit; // 처리 종료
 } finally {
 	db_destroy_conn($conn); // DB 파기 // 에러가 나면 DB를 사용할 일이 없으니까 파기 해주는 것

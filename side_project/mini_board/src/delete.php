@@ -2,14 +2,21 @@
 
 define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/"); // 웹서버 root 패스 생성
 define("FILE_HEADER", ROOT."header.php"); // 헤더 패스
+define("ERROR_MSG_PARAM", "Parameter Error : %s"); // 파라미터 에러 메세지
 require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
+$arr_err_msg = []; // 에러 메세지 저장용
+
 try { 
+    // DB Connect
+	$conn = null; // PDO 객체 변수
+
     if(!my_db_conn($conn)) {
         // 강제 예외 발생 : DB Instance
         throw new Exception("DB Error : PDO Instance");
     }
 
+    // Method 획득
     $http_method = $_SERVER["REQUEST_METHOD"];
 
     if($http_method === "GET") {
@@ -44,8 +51,7 @@ try {
             throw new Exception("DB Error : Select id count");
         }
         $item = $result[0];
-    }
-    else {
+    } else {
         // 3-2. POST일 경우 (삭제 페이지의 동의 버튼 클릭)
         // 3-2-1. 파라미터에서 id 획득
         $id = isset($_POST["id"]) ? $_POST["id"] : "";
@@ -73,16 +79,17 @@ try {
         header("Location: list.php"); // 리스트 페이지로 이동
         exit; // 처리 종료
     }    
-} catch(Exception $e) {
-    // POST일 경우
-    if($http_method === "POST") {
-        $conn->rollBack(); // collback
+    } catch(Exception $e) {
+        // POST일 경우
+        if($http_method === "POST") {
+            $conn->rollBack(); // collback
+        }
+        // echo $e->getMessage();
+        header("Location: error.php/?err_msg={$e->getMessage()}");
+        exit;
+    } finally {
+        db_destroy_conn($conn); // DB 파기
     }
-    echo $e->getMessage();
-    exit;
-} finally {
-    db_destroy_conn($conn);
-}
 
 
 ?>
@@ -110,19 +117,19 @@ try {
             </caption>
             <tr>
                 <th>게시글 번호</th>
-                <td>20</td>
+                <td><?php echo $item["id"] ?></td>
             </tr>
             <tr>
                 <th>작성일</th>
-                <td>2023-09-20 11:05:43</td>
+                <td><?php echo $item["create_at"] ?></td>
             </tr>
             <tr>
                 <th>제목</th>
-                <td>제목20</td>
+                <td><?php echo $item["title"] ?></td>
             </tr>
             <tr>
                 <th>내용</th>
-                <td>내용20</td>
+                <td><?php echo $item["content"] ?></td>
             </tr>
         </table>
     </main>
@@ -130,7 +137,7 @@ try {
         <form action="/mini_board/src/delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="delete_a">
-                <button class="delete_b" type="submit">동의</button>
+                <button class="delete_b" type="submit">삭제</button>
                 <a class="delete_b" href="/mini_board/src/detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
             </div>
         </form>
