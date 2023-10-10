@@ -32,7 +32,6 @@ header > h1 {
 header h1 a:visited{
 	color:#fff;
 }
-
 .wrap {
 	margin: 15px auto;
 	max-width: 700px;
@@ -40,8 +39,6 @@ header h1 a:visited{
 .a {
 	text-align: right;
 }
-
-
 .write-btn {
 	width: 80px;
 	height: 50px;
@@ -52,14 +49,18 @@ header h1 a:visited{
 	border-radius: 30px;
 	font-size: 1.2rem;
 }
-
 table {
 	border-collapse: collapse;
 	width: 100%;
 	height: 500px;
 	margin: 15px auto;
 	font-size: 1.5rem;
-	background-color: beige;
+}
+th {
+	font-size: 1.5rem;
+}
+.insert_th {
+	font-size: 1.5rem;
 }
 td { 
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -93,7 +94,6 @@ a {
 
 .sfrom {
 	margin: 15px;
-	text-align: center;
 }
 .detail_a {
 	/* display: inline-block; */
@@ -179,7 +179,7 @@ textarea {
 	color: rgb(230, 62, 62);
 }
 .input_up_tit {
-	width: 100%;
+	width: 80%;
 	height: 80%;
 	border: none;
 	font-size: 16px;
@@ -189,7 +189,7 @@ textarea {
 }
 
 .input_up_con {
-	width: 100%;
+	width: 80%;
 	height: 90%;
 	border: none;
 	font-size: 16px;
@@ -199,3 +199,15 @@ textarea {
 	outline: none;
 }
 /* backdrop-filter 참고 https://brunch.co.kr/@skykamja24/505*/
+.detail_tb {
+	width: 1000px;
+	margin: 0 auto;
+}
+.insert_tb {
+	width: 1000px;
+	margin: 0 auto;
+}
+.update_tb {
+	width: 1000px;
+	margin: 0 auto;
+}

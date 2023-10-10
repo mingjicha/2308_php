@@ -98,21 +98,34 @@ if($http_method === "POST") {
 				}
 			?>
 		</div>
-			<form action="/mini_board/src/insert.php" method="post">
-				<label for="title">제목 : </label>
-				<input type="text" name="title" id="title" value="<?php echo $title ?>"> <!--빈 문자열로 선언을 해두고 value로 넣어줘야함 -->
-				<!-- input 짧은 글 -->
-				<br>
-				<label for="content">내용 : </label>
-				<textarea name="content" id="content" cols="30" rows="10"><?php echo $content ?></textarea>
-				<!-- textarea 긴 글 -->
-				<br>
-				<div class="insert_a">
-					<button class="insert_b" type="submit">작성</button>
-					<!-- action으로 선언한 서버로 submit(전송) 해준다 -->
-					<a class="insert_b" href="/mini_board/src/list.php">취소</a>
-				</div>
-			</form>
+			<div class="insert_tb">
+				<table>
+					<form action="/mini_board/src/insert.php" method="post">
+					<tr>
+						<th>
+							<label for="title" class="insert_th">제목 </label>
+						</th>
+						<td>
+							<input type="text" name="title" id="title" value="<?php echo $title ?>" class="input_up_tit"> <!--빈 문자열로 선언을 해두고 value로 넣어줘야함 -->
+							<!-- input 짧은 글 -->
+						</td>
+					</tr>
+						<th>
+							<label for="content" class="insert_th">내용 </label>
+						</th>
+						<td>
+							<textarea name="content" id="content" cols="30" rows="10" class="input_up_con"><?php echo $content ?></textarea>
+							<!-- textarea 긴 글 -->
+						</td>
+				</table>
+						<div class="insert_a">
+							<button class="insert_b" type="submit" class="insert_th">작성</button>
+							<!-- action으로 선언한 서버로 submit(전송) 해준다 -->
+							<a class="insert_b" href="/mini_board/src/list.php">취소</a>						
+						</div>
+					</form>
+
+			</div>
 	</diV>
 </body>
 </html>

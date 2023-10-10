@@ -75,24 +75,26 @@ try {
 	<?php
 		require_once(FILE_HEADER);
 	?>
-	<table>
-		<tr>
-			<th>글 번호</th>
-			<td><?php echo $item["id"]; ?></td>
-		</tr>
-		<tr>
-			<th>제목</th>
-			<td><?php echo $item["title"]; ?></td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td><?php echo $item["content"]; ?></td>
-		</tr>
-		<tr>
-			<th>작성일자</th>
-			<td><?php echo $item["create_at"]; ?></td>
-		</tr>
-	</table>
+	<div class="detail_tb">
+		<table>
+			<tr>
+				<th>글 번호</th>
+				<td><?php echo $item["id"]; ?></td>
+			</tr>
+			<tr>
+				<th>제목</th>
+				<td><?php echo $item["title"]; ?></td>
+			</tr>
+			<tr>
+				<th>내용</th>
+				<td><?php echo $item["content"]; ?></td>
+			</tr>
+			<tr>
+				<th>작성일자</th>
+				<td><?php echo $item["create_at"]; ?></td>
+			</tr>
+		</table>
+	</div>
 	<div class="detail_a">
 		<a class="detail_b" href="/mini_board/src/update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >수정</a>
 		<a class="detail_b" href="/mini_board/src/list.php/?page=<?php echo $page; ?>">목록</a>

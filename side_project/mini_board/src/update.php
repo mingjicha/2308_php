@@ -158,24 +158,26 @@ try {
     <form action="/mini_board/src/update.php" method="post">
         <input type="hidden" name="id" value="<?php echo $id ?>">
         <input type="hidden" name="page" value="<?php echo $page ?>">
-            <table>
-                <tr>
-                    <th>글 번호</th>
-                    <td><?php echo $item["id"]; ?></td>
-                </tr>
-                <tr>
-                    <th>제목</th>
-                    <td>
-                        <input type="text" name="title" value="<?php echo $item["title"] ?>">
-                    </td>
-                </tr>
-                <tr>
-                    <th>내용</th>
-                    <td>
-                        <textarea name="content" id="content" cols="30" rows="10"><?php echo $item["content"] ?></textarea>    
-                    </td>
-                </tr>
-            </table>
+            <div class="update_tb">
+                <table>
+                    <tr>
+                        <th>글 번호</th>
+                        <td><?php echo $item["id"]; ?></td>
+                    </tr>
+                    <tr>
+                        <th>제목</th>
+                        <td>
+                            <input type="text" name="title" value="<?php echo $item["title"] ?>" class="input_up_tit">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>내용</th>
+                        <td>
+                            <textarea name="content" id="content" cols="30" rows="10" class="input_up_con"><?php echo $item["content"] ?></textarea>    
+                        </td>
+                    </tr>
+                </table>
+            </div>
         <!-- 수정 확인 버튼 클릭 
              post > update.php
              게시글의 id를 이용해서 update -->
