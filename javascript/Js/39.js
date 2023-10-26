@@ -1,4 +1,4 @@
-// 1. DOM ( Document Object Model )이란? - 교재 page 679 그림 참조
+// 1. DOM ( Document Object Model )이란? - 교재 679page 그림 참조
 //  - 웹 문서를 제어하기 위해서 웹 문서를 객체화한 것
 //  - DOM API를 통해서 HTML의 구조나 내용 또는 스타일 등을 동적으로 조작 가능
 
@@ -42,7 +42,7 @@ TITLE.innerHTML = '<p>트러플리조또</p>'; // <h1>탕수육</h1> -> <p>짬�
 // setAttribute('','') : 요소에 속성을 추가
 const INTXT = document.getElementById('intxt');
 // INTXT.setAttribute('placeholder', '여기');
-// 몇몇 속성들은 DOM객체에서 바로 설정 가능
+// **몇몇 속성들은 DOM객체에서 바로 설정 가능
 // ex) INTXT.placeholder = '바로 접근 가능'; 
 
 // removeAttribute('') : 요소의 속성을 제거
@@ -80,9 +80,12 @@ UL.insertBefore(LI, SPACE); // (바꿀 것, 바꿀 위치) 테트리스 위에 L
 
 // 6. 참조
 //  DOM 속성
+//      https://developer.mozilla.org/en/docs/Web/API/Element
 
 // Document
+//      https://developer.mozilla.org/ko/docs/Web/API/Document    
 
+// ------------실습이지롱
 // 1. 사과게임 위에 장기를 넣어주세요.
 const LI_J = document.createElement('li'); // 콘솔에 쳐서 위치 확인하기
 LI_J.innerHTML = "장기 재미업서요";
@@ -103,4 +106,5 @@ for(let i = 0; i < EVEN.length; i++) { // 배열 돌려주기 0번부터 시작
     } else {
         EVEN[i].style.color = 'red'; // 짝수
     }
+    // EVEN[i].style.color = i % 2 === 0 ? 'blue' : 'red'; // 한 줄로 이렇게도 가능!
 };
