@@ -6,10 +6,11 @@
     <title>40 Tng</title>
     <style>
     /* div 설정하고 위치 지정하기 */
+    /* 배경색 위치 확인용 */
     #hint {
         width: 120px;
         height: 120px;
-        background-color: blue;
+        /* background-color: blue;  */
         position: relative;
         top: 700px;
         left: 500px;
@@ -17,17 +18,22 @@
     #correct {
         width: 50px;
         height: 50px;
-        background-color: beige;
-        position: relative;
-        top: 620px;
-        left: 535px;
+        /* background-color: beige; */
+        position: absolute;
+        top: 35px;
+        left: 35px;
+    }
+    #hello {
+        display: block;
+        margin: auto;
     }
     </style>
 </head>
 <body>
-    <button onclick="alert('안녕하세요. \n숨어있는 div를 찾아보세요.');">버튼</button> 
-    <div id="hint"></div>
-    <div id="correct"></div>
+    <button id="hello" onclick="alert('안냐새오. \n숨어있는 네모를 찾아보세요!😋');">버튼</button> 
+    <div id="hint">
+        <div id="correct"></div>
+    </div>
 
     <script src="./40.js"></script> 
 </body>
