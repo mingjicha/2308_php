@@ -50,7 +50,42 @@ function div_correct() {
             // false로 됐을 경우 i를 반전 시켜서 true로 만들고 다시 실행되면 앗 걸렸당이 뜰 수 있게 함.
 }
 // 추가로 버튼을 클릭 했을 때 찾기 게임 시작하기
-function button
+// function btn_click() {
+//     alert('안냐새오. \n숨어있는 네모를 찾아보세요!😋');
+
+//     const HINT = document.getElementById('hint');
+//     const CORRECT = document.getElementById('correct');
+    
+//     let i = true;
+//     HINT.addEventListener('mouseenter', div_hint);
+
+//     function div_hint() { 
+//         if(i) { // i가 true라면 -> HINT에 mouseenter가 되는게 실행이 된다면
+//             alert('헙...두근두긍'); // 이러한 팝업을 띄울 거야 (12-14 line 확인)
+//         }
+//     }
+//     CORRECT.addEventListener('click', div_correct);
+
+//     function div_correct() {
+//         if(i) { // i가 true라면 -> CORRECT에 click이 되는게 실행이 된다면
+//             alert('앗! 걸렸당!') // 이러한 팝업을 띄울 거야 (20-24 line 확인)
+//             CORRECT.style.backgroundColor = "beige"; // 그리고 스타일도 줄 거야
+//         } else { // i가 true가 아닌 모든 경우는
+//             alert('다시 수믈게 \nㅎㅎ 수플래 마싯썽') // 팝업을 띄우고
+//             CORRECT.style.backgroundColor = "white"; // 다시 숨길 거야
+
+//             var x = Math.floor(Math.random() * window.innerWidth);
+//             var y = Math.floor(Math.random() * window.innerHeight);
+
+
+//             HINT.style.left = x + 'px';
+//             HINT.style.top = y + 'px';
+//         }
+//         i = !i; // (i를 반전 시킴) i가 true면 flase로 반전시켜서 다시 돌 때 else 안에 있는 걸 출력 시켜주고
+//                 // false로 됐을 경우 i를 반전 시켜서 true로 만들고 다시 실행되면 앗 걸렸당이 뜰 수 있게 함.
+//     }
+
+// }
 
 // getEventListeners(확인할 것); 콘솔에서 확인해 볼 수 잇서요
 
