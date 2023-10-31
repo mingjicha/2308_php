@@ -1,14 +1,20 @@
+<?php
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상세</title>
-    <link rel="stylesheet" href="./css/common.css">
+    <title>수정</title>
+    <link rel="stylesheet" href="/과제애오/src/css/common.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- javascript -->
-    <!-- <script src="/과제애오/doc/design/css/common.js"></script> -->
+    <!-- <script src="/과제애오/src/css/gnb.js"></script> -->
 </head>
 <body>
     <!-- 배경 이미지 -->
@@ -29,14 +35,14 @@
                 </li>
             </ul>
         </div>
-    </div>   
-    <div class="anything"> 
+    </div>     
+    <div class="board"> 
         <p>냠냠</p>
         <p>헤이즐넛 라떼 맛있오</p>
         <p>챱챱챱</p>
-    </div> 
-    <a href="./04_list.html" class="list_btn">목록</a>
-    <a href="./08_update.html" class="update_btn">수정</a>
-    <a href="./07_delete.html" class="delete_btn">삭제</a>
+        <p>내일도 먹오야지🥰</p>
+    </div>
+    <a href="./08_update.html">수정</a>
+    <a href="./04_list.html">취소</a>
 </body>
 </html>

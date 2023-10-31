@@ -1,14 +1,19 @@
+<?php
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상세</title>
-    <link rel="stylesheet" href="./css/common.css">
+    <title>목록</title>
+    <link rel="stylesheet" href="/과제애오/src/css/common.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- javascript -->
-    <!-- <script src="/과제애오/doc/design/css/common.js"></script> -->
+    <!-- <script src="/과제애오/src/css/gnb.js"></script> -->
 </head>
 <body>
     <!-- 배경 이미지 -->
@@ -29,14 +34,26 @@
                 </li>
             </ul>
         </div>
-    </div>   
-    <div class="anything"> 
-        <p>냠냠</p>
-        <p>헤이즐넛 라떼 맛있오</p>
-        <p>챱챱챱</p>
-    </div> 
-    <a href="./04_list.html" class="list_btn">목록</a>
-    <a href="./08_update.html" class="update_btn">수정</a>
-    <a href="./07_delete.html" class="delete_btn">삭제</a>
+    </div>     
+    <a href="./05_insert.html" class="insert_btn">혼자 놀기</a>
+    <div class="board">
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성일</th>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>햄찌 기여오</td>
+                <td>2023-10-25</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>냠냠</td>
+                <td>2023-10-24</td>
+            </tr>
+        </table>
+    </div>    
 </body>
 </html>
