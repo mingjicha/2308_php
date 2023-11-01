@@ -8,11 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>어스오세요</title>
-    <link rel="stylesheet" href="/과제애오/src/css/common.css">
+    <link rel="stylesheet" href="/homework/src/css/common.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- javascript -->
-    <!-- <script src="/과제애오/src/css/gnb.js"></script> -->
+    <!-- <script src="/homework/src/css/gnb.js"></script> -->
 </head>
 <body>
     <!-- 배경 이미지 -->
@@ -23,13 +23,13 @@
         <div class="gnb_wrap">
             <ul class="gnb active">
                 <li>
-                    <a href="./02_welcome.html">어스오세요</a>
+                    <a href="/homework/src/02_welcome.php">어스오세요</a>
                 </li>
                 <li>
-                    <a href="./03_hello.html">반갑습니다</a>
+                    <a href="/homework/src/03_hello.php">반갑습니다</a>
                 </li>
                 <li>
-                    <a href="./04_list.html">이래저래요</a>
+                    <a href="/homework/src/04_list.php">이래저래요</a>
                 </li>
             </ul>
         </div>
@@ -39,7 +39,6 @@
             <li>어스오세용ㅎㅎ</li>
             <li>저의 작고 소중한 미이니 게시판</li>
             <li>시작해볼게요???</li>
-            <li>이야아아아~~~~~압</li>
         </ul>
     </div> 
     <div class="typing">
@@ -47,11 +46,10 @@
            <li></li>
            <li></li>
            <li></li>
-           <li></li>
         </ul>
     </div>  
     <p class="typing"></p> 
     <!-- javascript -->
-    <script src="/과제애오/src/css/effect.js"></script>
+    <script src="/homework/src/css/effect.js"></script>
 </body>
 </html>

@@ -68,11 +68,11 @@ function db_select_boards_paging(&$conn, &$arr_param) {
 			" SELECT "
 			."		id "
 			."		,title "
-			."		,create_at "
+			." 		,DATE_FORMAT(create_at, '%Y-%m-%d') AS create_at "
 			." FROM "
 			." 		boards "
 			." WHERE "
-			."		delete_flg = '0' "
+			."		delete_flag = '0' "
 			." ORDER BY "
 			." 		id DESC "
 			." LIMIT :list_cnt OFFSET :offset " // list.php on line 56
@@ -106,7 +106,7 @@ function db_select_boards_cnt(&$conn) {
 		." FROM "
 		."		boards "
 		." WHERE "
-		."		delete_flg = '0' "
+		."		delete_flag = '0' "
 		;
 	
 		try {
@@ -166,14 +166,15 @@ function db_select_boards_id(&$conn, &$arr_param) {
 		." 		id "
 		." 		,title "
 		." 		,content "
-		."		,create_at "
+		." 		,DATE_FORMAT(create_at, '%Y-%m-%d') AS create_at "
 		." FROM "
 		."		boards "
 		." WHERE "
 		." 		id = :id "
+		."		delete_flag = '0' "
 		// 삭제된 게시글 조회 못하게 하기
 		." AND "
-		." 		delete_flg = '0' "
+		." 		delete_flag = '0' "
 		;
 	$arr_ps = [
 			":id" => $arr_param["id"]
@@ -238,7 +239,7 @@ function db_delete_boards_id(&$conn, &$arr_param) {
 		." boards "
 		." SET "
 		." 		delete_at = now() "
-		." 		,delete_flg = '1' "
+		." 		,delete_flag = '1' "
 		." WHERE "
 		." 		id = :id "
 		;

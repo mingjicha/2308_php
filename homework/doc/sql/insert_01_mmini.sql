@@ -1,4 +1,4 @@
-INSERT INTO mmini(
+INSERT INTO boards(
 -- 나머지는 디폴트 값이니까 알아서 설정 되므로 두가지만 insert
 	title
 	,content
@@ -18,4 +18,4 @@ VALUES
 COMMIT;
 
 SELECT *
-FROM mmini;
+FROM boards;

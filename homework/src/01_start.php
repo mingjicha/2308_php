@@ -1,19 +1,14 @@
-<?php
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>샤라락</title>
-    <link rel="stylesheet" href="/과제애오/src/css/common.css">
+    <link rel="stylesheet" href="/homework/src/css/common.css">
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- javascript -->
-    <script src="/과제애오/src/css/gnb.js"></script>
+    <script src="/homework/src/css/gnb.js"></script>
 </head>
 <body>
     <!-- 배경 이미지 -->
@@ -24,13 +19,13 @@
         <div class="gnb_wrap">
             <ul class="gnb">
                 <li>
-                    <a href="./02_welcome.html">어스오세요</a>
+                    <a href="/homework/src/02_welcome.php">어스오세요</a>
                 </li>
                 <li>
-                    <a href="./03_hello.html">반갑습니다</a>
+                    <a href="/homework/src/03_hello.php">반갑습니다</a>
                 </li>
                 <li>
-                    <a href="./04_list.html">이래저래요</a>
+                    <a href="/homework/src/04_list.php">이래저래요</a>
                 </li>
             </ul>
         </div>
