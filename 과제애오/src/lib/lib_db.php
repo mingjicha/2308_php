@@ -23,7 +23,7 @@ function my_db_conn( &$conn ) {
 	$db_user	= "root"; // user
 	// root - 최상위
 	$db_pw		= "php504"; // password
-	$db_name 	= "mmini_board"; // DB name
+	$db_name 	= "homework"; // DB name
 	$db_charset = "utf8mb4"; // charset
 	$db_dns		= "mysql:host=".$db_host.";dbname=".$db_name.";charset".$db_charset;
 

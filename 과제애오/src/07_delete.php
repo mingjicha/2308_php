@@ -36,16 +36,21 @@
             </ul>
         </div>
     </div>   
-    <div class="board"> 
-        <p>냠냠</p>
-        <p>헤이즐넛 라떼 맛있오</p>
-        <p>챱챱챱</p>
-    </div> 
-    <div class="del_btn">
-        <p>삭제 할고야,,?</p>
-        <p>진짜 삭제한다???</p>
-    </div> 
-    <a href="./07_delete.html">삭제</a>
-    <a href="./04_list.html">취소</a>
+    <div class="main">
+        <!-- 게시글 불러오기 -->
+        <div class="board"> 
+            <p>냠냠</p>
+            <p>헤이즐넛 라떼 맛있오</p>
+            <p>챱챱챱</p>
+        </div> 
+        <!-- 삭제 화인 문구 -->
+        <div class="del_btn">
+            <p>삭제 할고야,,?</p>
+            <p>진짜 삭제한다???</p>
+        </div> 
+        <!-- 삭제 : button, 취소 : a 태그 -->
+        <a href="./07_delete.html">삭제</a>
+        <a href="./04_list.html">취소</a>
+    </div>
 </body>
 </html>

@@ -34,26 +34,35 @@
                 </li>
             </ul>
         </div>
-    </div>     
-    <a href="./05_insert.html" class="insert_btn">혼자 놀기</a>
-    <div class="board">
-        <table>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성일</th>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>햄찌 기여오</td>
-                <td>2023-10-25</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>냠냠</td>
-                <td>2023-10-24</td>
-            </tr>
-        </table>
-    </div>    
+    </div>   
+    <div class="main">
+        <!-- 작성 버튼  -->
+        <a href="./05_insert.html" class="insert_btn">혼자 놀기</a>
+        <!-- 게시판 리스트 -->
+        <div class="board">
+            <table>
+                <tr class="board-tit">
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                </tr>
+                <!-- php 연동 리스트 생성 -->
+                <tr>
+                    <td>2</td>
+                    <td>햄찌 기여오</td>
+                    <td>2023-10-25</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>냠냠</td>
+                    <td>2023-10-24</td>
+                </tr>
+            </table>
+        </div>  
+        <!-- 가능하면 페이징 처리  -->
+        <div>
+
+        </div>
+    </div>
 </body>
 </html>

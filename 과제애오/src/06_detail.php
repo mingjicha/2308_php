@@ -36,14 +36,18 @@
             </ul>
         </div>
     </div>   
-    <div class="board"> 
-        <p>냠냠</p>
-        <p>헤이즐넛 라떼 맛있오</p>
-        <p>챱챱챱</p>
-    </div> 
-    <a href="./04_list.html">목록</a>
-    <a href="./08_update.html">수정</a>
-    <a href="./07_delete.html">삭제</a>
+    <div class="main">
+        <!-- 게시글 불러오기 -->
+        <div class="board"> 
+            <p>냠냠</p>
+            <p>헤이즐넛 라떼 맛있오</p>
+            <p>챱챱챱</p>
+        </div> 
+        <!-- 목록, 수정, 삭제 : 페이지 이동만 있으니까 a 태그 -->
+        <a href="./04_list.html">목록</a>
+        <a href="./08_update.html">수정</a>
+        <a href="./07_delete.html">삭제</a>
+    </div>
     <!-- javascript -->
     <script src="/과제애오/src/css/effect.js"></script>
 </body>

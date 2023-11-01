@@ -35,13 +35,17 @@
                 </li>
             </ul>
         </div>
-    </div>  
-    <div class="board"> 
-        <p>냠냠</p>
-        <p>헤이즐넛 라떼 맛있오</p>
-        <p>챱챱챱</p>
     </div> 
-        <a href="./05_insert.html">작성</a>
-        <a href="./04_list.html">취소</a>
+    <!-- form 양식 만들어서 작성글 받아주기 -->
+    <div class="main">
+        <div class="board"> 
+            <p>냠냠</p>
+            <p>헤이즐넛 라떼 맛있오</p>
+            <p>챱챱챱</p>
+        </div> 
+            <!-- 작성 : button, 취소 : a 태그 -->
+            <a href="./05_insert.html">작성</a>
+            <a href="./04_list.html">취소</a>
+    </div> 
 </body>
 </html>

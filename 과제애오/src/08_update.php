@@ -36,13 +36,17 @@
             </ul>
         </div>
     </div>     
-    <div class="board"> 
-        <p>냠냠</p>
-        <p>헤이즐넛 라떼 맛있오</p>
-        <p>챱챱챱</p>
-        <p>내일도 먹오야지🥰</p>
+    <div class="main">
+        <!-- 글 번호는 받아오고 제목, 내용은 수정할 수 있게 -->
+        <div class="board"> 
+            <p>냠냠</p>
+            <p>헤이즐넛 라떼 맛있오</p>
+            <p>챱챱챱</p>
+            <p>내일도 먹오야지🥰</p>
+        </div>
+        <!-- 수정 : button, 취소 : a 태그 -->
+        <a href="./08_update.html">수정</a>
+        <a href="./04_list.html">취소</a>
     </div>
-    <a href="./08_update.html">수정</a>
-    <a href="./04_list.html">취소</a>
 </body>
 </html>

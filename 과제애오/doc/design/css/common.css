@@ -88,6 +88,9 @@ a,a:hover {
     line-height: 70px;
 }
 /* start css 효과 */
+.any_sn {
+    font-size: 35px;
+}
 .any_mini {
     text-decoration-line: underline;
     text-decoration-thickness: 3px;
