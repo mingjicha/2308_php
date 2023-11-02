@@ -4,35 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="/view/css/common.css">
     <title>자유게시판</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">꼬마마법사</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      게시판
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="./free.html">자유게시판</li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="./question.html">질문게시판</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <a href="./login.html" class="nav-link text-light" role="button">로그아웃</a>
-              </div>
-            </div>
-          </nav>
-    </header>
+    <!-- 헤더 설정 -->
+    <?php require_once("view/inc/header.php"); ?>
         <div class="text-center mt-5 mb-5">
             <h1>자유게시판</h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16" data-bs-toggle="modal" data-bs-target="#modalInsert">
@@ -46,7 +23,7 @@
      </div>   
     <main class="justify-content-center align-content-center h-75">
         <div class="card">
-            <img src="/bootstrap/img/1.png" class="card-img-top" alt="...">
+            <img src="/view/img/1.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">레미</h5>
               <p class="card-text">핑꾸 핑꾸 핫핑꾸쨩</p>
@@ -54,7 +31,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="/bootstrap/img/2.png" class="card-img-top" alt="...">
+            <img src="/view/img/2.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">메이</h5>
               <p class="card-text">주먹 주먹 핵주먹</p>
@@ -62,7 +39,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="/bootstrap/img/3.png" class="card-img-top" alt="...">
+            <img src="/view/img/3.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">사랑</h5>
               <p class="card-text">꺾기 꺾기 팔꺾기</p>
@@ -70,7 +47,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="/bootstrap/img/4.png" class="card-img-top" alt="...">
+            <img src="/view/img/4.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">보라</h5>
               <p class="card-text">허세 허세 개허세</p>
@@ -78,7 +55,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="/bootstrap/img/5.png" class="card-img-top" alt="...">
+            <img src="/view/img/5.png" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">모모</h5>
               <p class="card-text">박수짝짝</p>
@@ -95,7 +72,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="/bootstrap/img/1.gif" alt=""><br>
+            <img src="/view/img/1.gif" alt=""><br>
             박수 짝짝 등산장갑<br>
             박수 짝짝 새로신는 신발<br>
             박수 짝짝 신상원피스<br>
@@ -116,7 +93,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="/bootstrap/img/2.gif" alt=""><br>
+            <img src="/view/img/2.gif" alt=""><br>
             내 차롄가(굵직)<br>
             박수 짝짝 노가다 목장갑<br>
             박수 짝짝 어제 훔쳐온 힐<br>
@@ -138,7 +115,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="/bootstrap/img/3.gif" alt=""><br>
+            <img src="/view/img/3.gif" alt=""><br>
             내 차롄가(조신)<br>
             박수 짝짝 수술용 장갑<br>
             박수 짝짝 이거 사실 힐리스<br>
@@ -160,7 +137,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="/bootstrap/img/4.gif" alt=""><br>
+            <img src="/view/img/4.gif" alt=""><br>
             내 차롄가(중2병)<br>
             박수 짝짝 힙합 스웩<br>
             박수 짝짝 인생 별거 없어<br>
@@ -182,7 +159,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="/bootstrap/img/5.gif" alt=""><br>
+            <img src="/view/img/5.gif" alt=""><br>
             미안해 난 아직 업써😢
           </div>
           <div class="modal-footer">
@@ -195,7 +172,7 @@
     <div class="modal fade" id="modalInsert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <form action="">
+          <form action="/board/list">
             <div class="modal-header">
               <h5 class="modal-title" id="staticBackdropLabel">나도 꼬마마법사🧚‍♀️</h5>
             </div>
@@ -227,6 +204,6 @@
     <footer class="bg-dark fixed-bottom text-light text-center p-3">저작권</footer>
     <!-- Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="/bootstrap/js/common.js"></script>
+    <script src="/view/js/common.js"></script>
 </body>
 </html>
