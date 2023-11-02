@@ -9,4 +9,32 @@ xcopy D:\workspace\2308_php\side_project\mini_multi_board C:\Apache24\htdocs\min
 
     객체지향의 가장 기본 베이스가 되는 
     참고 : https://m.blog.naver.com/jhc9639/220967034588
+    
+2. Apache - httpd.conf 파일 수정
+	- 주석 해제       
+	LoadModule rewrite_module modules/mod_rewrite.so
 
+	- <Directory "${SRVROOT}/htdocs">내 AllowOverride 설정 변경
+		AllowOverride None -> AllowOverride All
+
+3. root에 .htaccess 파일 생성 후 아래 내용 삽입
+	Options -MultiViews
+	RewriteEngine On
+	Options -Indexes
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+	2-1. 참조
+		- .htaccess 파일은 디렉토리에 대한 설정 옵션을 제공하는 파일입니다.
+		- Options -MultiViews
+			localhost로 요청 시, index.php 또는 index.html를 자동으로 찾지 않습니다.
+		- RewriteEngine On
+			url을 재구성 하는 방식으로 직접 페이지를 탐색하는 것이 아니라 하나의 데이터로 받아드리는 설정입니다.
+		- Options -Indexes
+			index.php가 없을 경우 디렉토리를 보여주지 않는 설정 입니다.
+		- RewriteCond
+			RewriteRule의 url재설정을 위한 필터
+			%{REQUEST_FILENAME} !-d || !-f : 요청된 주소에 해당하는 디렉토리 || 파일이 있는지 확인
+		- RewriteRule
+			RewriteCond가 true인 요청이면 설정한 요청으로 룰을 변경합니다.
