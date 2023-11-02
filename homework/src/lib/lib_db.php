@@ -72,7 +72,7 @@ function db_select_boards_paging(&$conn, &$arr_param) {
 			." FROM "
 			." 		boards "
 			." WHERE "
-			."		delete_flag = '0' "
+			."		delete_flg = '0' "
 			." ORDER BY "
 			." 		id DESC "
 			." LIMIT :list_cnt OFFSET :offset " // list.php on line 56
@@ -106,13 +106,12 @@ function db_select_boards_cnt(&$conn) {
 		." FROM "
 		."		boards "
 		." WHERE "
-		."		delete_flag = '0' "
+		."		delete_flg = '0' "
 		;
 	
 		try {
 			$stmt = $conn->query($sql);
 			$result = $stmt->fetchAll();
-
 			return (int)$result[0]["cnt"]; // 정상 : 쿼리 결과 리턴
 		} catch(Exception $e) {
 			echo $e->getMessage(); // Exception 메세지 출력
@@ -171,10 +170,9 @@ function db_select_boards_id(&$conn, &$arr_param) {
 		."		boards "
 		." WHERE "
 		." 		id = :id "
-		."		delete_flag = '0' "
 		// 삭제된 게시글 조회 못하게 하기
-		." AND "
-		." 		delete_flag = '0' "
+		." 		AND "
+		." 		delete_flg = '0' "
 		;
 	$arr_ps = [
 			":id" => $arr_param["id"]
@@ -234,20 +232,19 @@ function db_update_boards_id(&$conn, &$arr_param) {
 // ---------------------------------
 function db_delete_boards_id(&$conn, &$arr_param) {
 	// 1. sql 작성 (UPDATE)
-	$sql = 
-		" UPDATE "
-		." boards "
-		." SET "
-		." 		delete_at = now() "
-		." 		,delete_flag = '1' "
-		." WHERE "
-		." 		id = :id "
-		;
-		$arr_ps = [
-			":id" => $arr_param["id"]
-		];
-		
-		try {
+	try {
+		$sql = 
+			" UPDATE "
+			." boards "
+			." SET "
+			." 		delete_at = now() "
+			." 		,delete_flg = '1' "
+			." WHERE "
+			." 		id = :id "
+			;
+			$arr_ps = [
+				":id" => $arr_param["id"]
+			];
 			// 2. Query 실행
 			$stmt = $conn->prepare($sql);
 			$result = $stmt->execute($arr_ps);

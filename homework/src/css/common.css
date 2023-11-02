@@ -163,7 +163,6 @@ a,a:hover {
 /* 오른쪽 작성한 리스트, 내용 들어가는 곳 */
 table {
     width: 1000px;
-    border-collapse : collapse;
     border-spacing : 0;
 }
 .board {
@@ -181,8 +180,15 @@ table {
 }
 .board_tb:hover td,.board_tb:hover td a {
     font-size:35px;
+}
+.board_tb:hover {
     background-color: #ffffff3f;
-    border-radius: 10%;
+}
+.board_tb:hover td:first-child {
+    border-radius: 20px 0 0 20px 
+}
+.board_tb:hover td:last-child { 
+    border-radius:0 20px 20px 0
 }
 /* 페이징  */
 .page_line {
