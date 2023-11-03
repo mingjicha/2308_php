@@ -132,21 +132,25 @@ try {
         </div> 
         <!-- 게시글 삭제 화면 -->
         <table class="board">
+            <colgroup>
+                <col width="20%"> 
+                <col width="80%">
+			</colgroup>
             <tr>
-                <td>번호</td>
-                <td><?php echo $item["id"] ?></td>
+                <td id="board_b">번호</td>
+                <td id="board_c"><?php echo $item["id"] ?></td>
             </tr>
             <tr>
-                <td>작성일</td>
-                <td><?php echo $item["create_at"] ?></td>
+                <td id="board_b">작성일</td>
+                <td id="board_c"><?php echo $item["create_at"] ?></td>
             </tr>
             <tr>
-                <td>제목</td>
-                <td><?php echo $item["title"] ?></td>
+                <td id="board_b">제목</td>
+                <td id="board_c"><?php echo $item["title"] ?></td>
             </tr>
             <tr>
-                <td>내용</td>
-                <td><?php echo $item["content"] ?></td>
+                <td id="board_b">내용</td>
+                <td id="board_c"><?php echo $item["content"] ?></td>
             </tr>
         </table>
         <div class="page_btn">

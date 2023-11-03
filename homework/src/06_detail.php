@@ -102,17 +102,21 @@ try {
         <div class="main">
             <!-- 게시글 불러오는 화면 -->
             <table class="board">
+                <colgroup>
+                    <col width="20%"> 
+                    <col width="80%">
+                </colgroup>
                 <tr>
-                    <td class="board_tit">번호</td>
-                    <td class="board_tb"><?php echo $item["id"]; ?></td>
+                    <td id="board_b">번호</td>
+                    <td id="board_c"><?php echo $item["id"]; ?></td>
                 </tr>
                 <tr>
-                    <td class="board_tit">제목</td>
-                    <td class="board_tb"><?php echo $item["title"]; ?></td>
+                    <td id="board_b">제목</td>
+                    <td id="board_c"><?php echo $item["title"]; ?></td>
                 </tr>
                 <tr>
-                    <td class="board_tit">내용</td>
-                    <td class="board_tb"><?php echo $item["content"]; ?></td>
+                    <td id="board_b">내용</td>
+                    <td><?php echo $item["content"]; ?></td>
                 </tr>
             </table>
         </div>

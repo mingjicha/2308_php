@@ -167,6 +167,10 @@ try {
             </div>
             <!-- 게시글 수정 화면 -->
             <table class="board">
+                <colgroup>
+                    <col width="20%"> 
+                    <col width="80%">
+                </colgroup>
                 <!-- 수정 에러 나도 내용 남을 수 있게 처리 -->
                 <?php 
                 if($http_method === "GET"){ // GET으로 처음 고유의 값 tit랑 con을 받아온다
@@ -178,19 +182,19 @@ try {
                 }
                 ?>
                 <tr>
-                    <td>번호</td>
+                    <td id="board_b">번호</td>
                     <td><?php echo $item["id"]; ?></td>
                 </tr>
                 <tr>
-                    <td>제목</td>
+                    <td id="board_b">제목</td>
                     <td>
-                        <input type="text" class='text_tit' name="title" id="title" value="<?php echo $tit_stay ?>" maxlength="20" spellcheck="false">
+                        <input type="text" class='input_tit' name="title" id="title" value="<?php echo $tit_stay ?>" maxlength="20" spellcheck="false">
                     </td>
                 </tr>
                 <tr>
-                    <td>내용</td>
+                    <td id="board_b">내용</td>
                     <td>
-                        <textarea class='text_con' name="content" id="content" cols="25" rows="10" spellcheck="false"><?php echo $con_stay ?></textarea>
+                        <textarea class='input_con' name="content" id="content" cols="25" rows="10" spellcheck="false"><?php echo $con_stay ?></textarea>
                     </td>
                 </tr>
             </table>

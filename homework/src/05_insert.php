@@ -112,16 +112,20 @@ if($http_method === "POST") {
 			</div>
 			<!-- 게시글 작성 화면 -->
         	<table class="board">
+				<colgroup>
+                    <col width="20%"> 
+                    <col width="80%">
+                </colgroup>
 			    <tr>
-					<td>제목</td>
-					<td>
-						<input type="text" name="title" id="title" value="<?php echo $title ?>" class="input_up_tit" placeholder="제목이지롱" spellcheck="false">
+					<td id="board_b">제목</td>
+					<td id="board_c">
+						<input type="text" name="title" id="title" value="<?php echo $title ?>" class="input_tit" placeholder="제목이지롱" spellcheck="false">
 					</td>
 				</tr>
 				<tr>
-					<td>내용</td>
+					<td id="board_b">내용</td>
 					<td>
-						<textarea name="content" id="content" cols="30" rows="10" class="input_up_con" placeholder="내용이지롱" spellcheck="false"><?php echo $content ?></textarea>
+						<textarea name="content" id="content" cols="30" rows="10" class="input_con" placeholder="내용이지롱" spellcheck="false"><?php echo $content ?></textarea>
 					</td>
 				</tr>
 			</table>
