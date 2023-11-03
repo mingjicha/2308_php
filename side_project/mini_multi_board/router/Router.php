@@ -30,16 +30,19 @@ class Router {
                 // 해당 컨트롤러 호출 // GET라면
                 // 로그인에 GET메소드로 왔다 // new User("메소드명");
                 // 파일 위치가 다르니까 상단에 위치 지정해줘야 함
+                // 유저랑 관련 있으니까 UserController 사용
                 new UserController("loginGet"); // 소괄호가 붙으면 실행시키겠다는 뜻
             } else {
                 // 해당 컨트롤러 호출 // POST라면
                 // 로그인에 POST메소드로 왔다
                 // new User("loginPost");
+                new UserController("loginPost");
             }
         } // url 값이 user/loout으로 왔는지 확인하기
           else if($url === "user/logout") { // 로그아웃일 때는 POST있을 경우가 없어서 없어도 됨
             if($method === "GET") {
                 // 해당 컨트롤러 호출
+                new UserController("logoutGet");
             } 
         } else if($url === "user/regist") {
             if($method === "GET") {

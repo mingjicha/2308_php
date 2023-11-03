@@ -11,15 +11,20 @@
     <?php require_once("view/inc/header.php"); ?>
 
     <main class="d-flex justify-content-center align-items-center h-75">
-        <form style="width: 300px;" action="./free.html">
-            <div id="errorMsg" class="form-text text-danger">아이디 또는 비밀번호를 다시 확인해 주세요.</div> 
+        <!-- 패스워드 때문에 get이외의 방식으로 통신해야 함 -->
+        <form style="width: 300px;" action="/user/login" method="POST"> 
+            <div id="errorMsg" class="form-text text-danger">
+                <!-- 에러메시지 불러오기 삼항연산자 사용 -->
+                <?php echo count($this->arrErrorMsg) > 0 ? implode("<br>", $this->arrErrorMsg) : "" ?>
+            </div> 
             <div class="mb-3">
                 <label for="u_id" class="form-label">아이디</label>
-                <input type="text" class="form-control" id="u_id">
+                <!-- name을 셋팅 해줘야 DB에서 key가 돼서 값이 넘어 감 -->
+                <input type="text" class="form-control" id="u_id" name="u_id">
             </div>
             <div class="mb-3">
                 <label for="u_pw" class="form-label">비밀번호</label>
-                <input type="password" class="form-control" id="u_pw">
+                <input type="password" class="form-control" id="u_pw" name="u_pw">
             </div>
             <button type="submit" class="btn btn-dark">로그인</button>
           </form>

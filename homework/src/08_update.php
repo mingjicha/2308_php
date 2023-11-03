@@ -130,18 +130,15 @@ try {
     <!-- 배경 이미지 -->
     <div class="back_img"></div>
     <!-- 에러메시지 -->
-    <div class="error_up">
-        <?php
-            require_once(FILE_HEADER);
-        ?>
-        <?php 
-                foreach($arr_err_msg as $val) {
-            ?>
-                <P><?php echo $val ?></P>
-            <?php
-                }
-            ?>
-    </div>
+    <div class="error_in">
+		<?php 
+			foreach($arr_err_msg as $val) {
+		?>
+			<P><?php echo $val ?></P>
+		<?php
+			}
+		?>
+	</div>
     <!-- 샤라락 버튼 -->
     <div class="main_btn">
         <a href="javascript:void(0);" class="menu_btn">샤라락</a>
@@ -159,7 +156,7 @@ try {
             </ul>
         </div>
     </div>     
-    <form action="/mini_board/src/update.php" method="post">
+    <form action="homework/src/08_update.php" method="post">
         <input type="hidden" name="id" value="<?php echo $id ?>">
         <input type="hidden" name="page" value="<?php echo $page ?>">
         <div class="main">
