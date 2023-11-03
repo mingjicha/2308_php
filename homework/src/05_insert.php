@@ -47,15 +47,14 @@ if($http_method === "POST") {
 			// 커밋은 신중하게
 
 			// insert가 끝났으니까 리스트 페이지로 이동
-			header("Location: list.php");
+			header("Location: 04_list.php");
 			exit;
 			}
 		} catch(Exception $e) {
 			if($conn !== null) {
 			$conn->rollBack(); 
 			}
-			// echo $e->getMessage(); // Exception 메세지 출력
-			header("Location: error.php/?err_msg={$e->getMessage()}");
+			echo $e->getMessage(); // Exception 메세지 출력
 			exit;
 		} finally {
 		db_destroy_conn($conn); // DB 파기 > 할 일 끝난 insert한테 관련된 DB가 더이상 필요가 없으니 불필요한 메모리 제거
