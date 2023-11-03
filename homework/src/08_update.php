@@ -1,13 +1,13 @@
 <?php
 define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/homework/src/"); // 웹서버 root path 생성
-define("ERROR_MSG_PARAM", "⛔ %s을 입력해 주세요."); //파라미터 에러 메세지
+define("ERROR_MSG_PARAM", "※ %s을 입력해 주세요."); //파라미터 에러 메세지
 require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
 $conn = null; // DB 연결용 변수
-$id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 세팅
-$page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 세팅
 $http_method = $_SERVER["REQUEST_METHOD"]; // Method 무슨 방식으로 가져오는 지 확인
 $arr_err_msg = []; // 에러 메세지 저장용
+$title = "";
+$content = "";
 
 try { 
     // DB 접속
@@ -19,7 +19,7 @@ try {
     // 첫번째 사용자가 처리할 수 없는 에러
     if($http_method === "GET") {
         $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 세팅
-        $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 세팅
+        $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // page 세팅
         
         if($id === "") {
 			$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "id");
@@ -38,7 +38,7 @@ try {
             // 게시글 수정을 위해 파라미터 세팅
             $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 세팅
             $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 세팅
-            $title = trim(isset($_POST["title"]) ? trim($_POST["title"]) : ""); // title 세팅 // trim 왼쪽 오른쪽 공백을 없애줌
+            $title = trim(isset($_POST["title"]) ? trim($_POST["title"]) : ""); // title 세팅
 		    $content = trim(isset($_POST["content"]) ? trim($_POST["content"]) : ""); // content 세팅
             // id page는 표시해주기 위해서 한 번 더 id랑 page를 넣어줌
             if($id === "") {
@@ -47,9 +47,13 @@ try {
             if($page === "") {
                 $arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "page");
             }
+
+            // id, page가 없을 경우(예외처리)
             if(count($arr_err_msg) >= 1) {
                 throw new Exception(implode("<br>", $arr_err_msg));
             }
+
+        	// title, content가 없을 경우
             if($title === "") {
                 $arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "제목");
             }
@@ -57,15 +61,13 @@ try {
                 $arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "내용");
             }
 
-            // 에러 메세지가 없을 경우에 업데이트 처리를 할 것이다.
+            // 에러 메세지가 없을 경우에 업데이트 처리
             if(count($arr_err_msg) === 0) {
                 // 데이터 무결성
                 $arr_param = [
                     "id" => $id
                     ,"title" => $title
                     ,"content" => $content 
-                    // ,"title" => $_POST["title"]
-                    // ,"content" => $_POST["content"]
                 ];
 
                 // 게시글 수정 처리 POST Nethod 일 경우에만 트랜잭션 시작 
@@ -129,16 +131,6 @@ try {
 <body>
     <!-- 배경 이미지 -->
     <div class="back_img"></div>
-    <!-- 에러메시지 -->
-    <div class="error_in">
-		<?php 
-			foreach($arr_err_msg as $val) {
-		?>
-			<P><?php echo $val ?></P>
-		<?php
-			}
-		?>
-	</div>
     <!-- 샤라락 버튼 -->
     <div class="main_btn">
         <a href="javascript:void(0);" class="menu_btn">샤라락</a>
@@ -155,35 +147,59 @@ try {
                 </li>
             </ul>
         </div>
-    </div>     
-    <form action="homework/src/08_update.php" method="post">
+    </div>   
+    <!-- 폼 태그 시작 -->
+    <form action="/homework/src/08_update.php" method="post">
+        <!-- id랑 page값 받아오기 -->
         <input type="hidden" name="id" value="<?php echo $id ?>">
         <input type="hidden" name="page" value="<?php echo $page ?>">
+        <!-- 오른쪽 메인 게시판 -->
         <div class="main">
-            <!-- 글 번호는 받아오고 제목, 내용은 수정할 수 있게 -->
+            <!-- 에러메시지 -->
+            <div class="error_msg">
+                <?php 
+                    foreach($arr_err_msg as $val) {
+                ?>
+                    <P><?php echo $val ?></P>
+                <?php
+                    }
+                ?>
+            </div>
+            <!-- 게시글 수정 화면 -->
             <table class="board">
+                <!-- 수정 에러 나도 내용 남을 수 있게 처리 -->
+                <?php 
+                if($http_method === "GET"){ // GET으로 처음 고유의 값 tit랑 con을 받아온다
+                    $tit_stay= $item["title"];
+                    $con_stay= $item["content"];
+                } else { // 에러가 떴을 때 수정 중인 내용을 POST 메소드에 저장해서 그 값을 val값으로 넣어줘서 변경 중이던 값을 그대로 출력할 수 있게 해준다
+                    $tit_stay= $_POST["title"];
+                    $con_stay= $_POST["content"];
+                }
+                ?>
                 <tr>
-                    <th>글 번호</th>
+                    <td>번호</td>
                     <td><?php echo $item["id"]; ?></td>
                 </tr>
                 <tr>
-                    <th>제목</th>
+                    <td>제목</td>
                     <td>
-                        <input type="text" name="title" value="<?php echo $item["title"] ?>" class="input_up_tit">
+                        <input type="text" class='text_tit' name="title" id="title" value="<?php echo $tit_stay ?>" maxlength="20" spellcheck="false">
                     </td>
                 </tr>
                 <tr>
-                    <th>내용</th>
+                    <td>내용</td>
                     <td>
-                        <textarea name="content" id="content" cols="30" rows="10" class="input_up_con"><?php echo $item["content"] ?></textarea>    
+                        <textarea class='text_con' name="content" id="content" cols="25" rows="10" spellcheck="false"><?php echo $con_stay ?></textarea>
                     </td>
                 </tr>
             </table>
-            <div class="page_num">
-                <!-- 수정 : button, 취소 : a 태그 -->
+            <!-- 페이지 버튼 -->
+            <div class="page_btn">
                 <button class="update_b" type="submit">수정</button>
                 <a href="/homework/src/06_detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
             </div>
         </div>
+    </form> 
 </body>
 </html>

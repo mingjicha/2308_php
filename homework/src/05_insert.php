@@ -1,6 +1,6 @@
 <?php
 define("ROOT", $_SERVER["DOCUMENT_ROOT"]."/homework/src/"); // 웹서버 root path 생성
-define("ERROR_MSG_PARAM", "⛔ %s을 입력해 주세요."); //파라미터 에러 메세지
+define("ERROR_MSG_PARAM", "※ %s을 입력해 주세요."); //파라미터 에러 메세지
 require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 $conn = null; // DB Connection 변수
 $http_method = $_SERVER["REQUEST_METHOD"]; // Method 무슨 방식으로 가져오는 지 확인
@@ -79,15 +79,6 @@ if($http_method === "POST") {
 <body>
     <!-- 배경 이미지 -->
     <div class="back_img"></div>
-    <div class="error_in">
-		<?php 
-			foreach($arr_err_msg as $val) {
-		?>
-			<P><?php echo $val ?></P>
-		<?php
-			}
-		?>
-	</div>
     <!-- 샤라락 버튼 -->
     <div class="main_btn">
         <a href="javascript:void(0);" class="menu_btn">샤라락</a>
@@ -105,23 +96,37 @@ if($http_method === "POST") {
             </ul>
         </div>
     </div> 
-    <!-- form 양식 만들어서 작성글 받아주기 -->
+    <!-- 폼 태그 시작 -->
 	<form action="/homework/src/05_insert.php" method="post">
+		<!-- 오른쪽 메인 게시판 -->
     	<div class="main">
+			<!-- 에러메시지 -->
+			<div class="error_msg">
+			<?php 
+				foreach($arr_err_msg as $val) {
+			?>
+				<P><?php echo $val ?></P>
+			<?php
+				}
+			?>
+			</div>
+			<!-- 게시글 작성 화면 -->
         	<table class="board">
 			    <tr>
+					<td>제목</td>
 					<td>
-						<input type="text" name="title" id="title" value="<?php echo $title ?>" class="input_up_tit" placeholder="제목이지롱"> <!--빈 문자열로 선언을 해두고 value로 넣어줘야함 -->
-							<!-- input 짧은 글 -->
+						<input type="text" name="title" id="title" value="<?php echo $title ?>" class="input_up_tit" placeholder="제목이지롱" spellcheck="false">
 					</td>
 				</tr>
+				<tr>
+					<td>내용</td>
 					<td>
-						<textarea name="content" id="content" cols="30" rows="10" class="input_up_con" placeholder="내용이지롱"><?php echo $content ?></textarea>
-						<!-- textarea 긴 글 -->
+						<textarea name="content" id="content" cols="30" rows="10" class="input_up_con" placeholder="내용이지롱" spellcheck="false"><?php echo $content ?></textarea>
 					</td>
+				</tr>
 			</table>
+			<!-- 페이지 버튼 -->
 			<div class="page_btn">
-				<!-- 작성 : button, 취소 : a 태그 -->
 				<button class="insert_b" type="submit">작성</button>
 				<a href="/homework/src/04_list.php">취소</a>
 			</div>

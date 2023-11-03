@@ -76,6 +76,16 @@ a,a:hover {
     display: block; 
     /* a랑 span태그는 블럭 지정해줘야 영역이 생기고 마진, 패딩이 먹힘 */
 }
+/* 에러 문구 */
+.error_msg {
+    width: 1000px;
+    text-align: center;
+    color: rgba(255, 30, 0, 0.966);
+    font-size: 25px;
+    position: fixed;
+    top: 200px;
+    left: 700px;
+}
 /* 오른쪽에 띄워줄 문구 - 01, 02, 03 page에서 */
 .anything {
     font-size: 50px;
@@ -160,12 +170,21 @@ a,a:hover {
     left: 1400px;
     text-align: center;
 }
-/* 오른쪽 작성한 리스트, 내용 들어가는 곳 */
-table {
+.page_btn_list {
+    display:inline-block;
+    font-size: 40px;
+	text-align: center;
+	line-height: 40px;
+}
+.page_btn_list:hover {
+    background-color: #ffffff3f;
+    color: rgb(53, 28, 199);
+    border-radius: 50px;
+}
+/* 리스트 페이지 */
+.board_list {
     width: 1000px;
     border-spacing : 0;
-}
-.board {
     font-size: 50px;
     position: fixed;
     top: 270px;
@@ -211,6 +230,8 @@ table {
     color: rgb(53, 28, 199);
     border-radius: 50px;
 }
+/* 디테일 페이지 */
+
 /* 삭제 확인 문구 */
 .del_btn {
     font-size: 50px;

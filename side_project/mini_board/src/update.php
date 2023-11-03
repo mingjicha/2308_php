@@ -161,7 +161,7 @@ try {
             <div class="update_tb">
                 <table>
                     <tr>
-                        <th>글 번호</th>
+                        <th>번호</th>
                         <td><?php echo $item["id"]; ?></td>
                     </tr>
                     <tr>

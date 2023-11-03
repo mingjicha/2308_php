@@ -96,32 +96,32 @@ try {
             </ul>
         </div>
     </div>   
+    <!-- 폼 태그 시작 -->
     <form action="/todolist/src/05_delete.php" method="post">
+        <!-- 오른쪽 메인 게시판 -->
         <div class="main">
-            <!-- 게시글 불러오기 -->
-            <div class="board"> 
-                <table>
-                    <tr>
-                        <td>번호</td>
-                        <td><?php echo $item["id"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>제목</td>
-                        <td><?php echo $item["title"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>내용</td>
-                        <td><?php echo $item["content"]; ?></td>
-                    </tr>
-                </table>
-            </div> 
-            <div class="page_btn">
-                <!-- 목록, 수정, 삭제 : 페이지 이동만 있으니까 a 태그 -->
-                <a href="/homework/src/04_list.php/?page=<?php echo $page; ?>">목록</a>
-                <a href="/homework/src/08_update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >수정</a>
-                <a href="/homework/src/07_delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >삭제</a>
-            </div> 
+            <!-- 게시글 불러오는 화면 -->
+            <table class="board">
+                <tr>
+                    <td class="board_tit">번호</td>
+                    <td class="board_tb"><?php echo $item["id"]; ?></td>
+                </tr>
+                <tr>
+                    <td class="board_tit">제목</td>
+                    <td class="board_tb"><?php echo $item["title"]; ?></td>
+                </tr>
+                <tr>
+                    <td class="board_tit">내용</td>
+                    <td class="board_tb"><?php echo $item["content"]; ?></td>
+                </tr>
+            </table>
         </div>
+        <!-- 페이지 버튼 -->
+        <div class="page_btn_list">
+            <a href="/homework/src/04_list.php/?page=<?php echo $page; ?>">목록</a>
+            <a href="/homework/src/08_update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >수정</a>
+            <a href="/homework/src/07_delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >삭제</a>
+        </div> 
     </form>    
     <!-- javascript -->
     <script src="/homework/src/css/effect.js"></script>

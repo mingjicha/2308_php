@@ -109,57 +109,56 @@ try {
             </ul>
         </div>
     </div>   
+	<!-- 오른쪽 메인 게시판 -->
     <div class="main">
         <!-- 작성 버튼  -->
         <a href="/homework/src/05_insert.php" class="page_btn insert_btn">작성하기</a>
-        <!-- 게시판 리스트 -->
-        <div class="board">
-            <table>
-                <colgroup>
-                <!-- 번호, 제목, 작성일자 순으로 가로 비율 맞추기 -->
-					<col width="20%"> 
-					<col width="50%">
-					<col width="30%">
-				</colgroup>
-                <tr class="board_tit">
-					<td>번호</td>
-					<td>제목</td>
-					<td>작성일</td>
+        <!-- 게시글 리스트 -->
+        <table class="board_list">
+            <!-- 번호, 제목, 작성일자 순으로 가로 비율 맞추기 -->
+            <colgroup>
+				<col width="20%"> 
+				<col width="50%">
+				<col width="30%">
+			</colgroup>
+            <tr>
+				<td>번호</td>
+				<td>제목</td>
+				<td>작성일</td>
+			</tr>
+            <!-- 리스트 불러오기 -->
+			<?php
+				foreach($result as $item) {
+			?>
+				<tr class="board_tb">
+					<td><?php echo $item["id"]; ?></td>
+					<td>
+						<!-- get방식 사용 -->
+						<a href="/homework/src/06_detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
+						<?php echo $item["title"]; ?>
+						<a>
+					</td>
+					<td><?php echo $item["create_at"]; ?></td>
 				</tr>
-                <!-- 리스트 생성하기 -->
-				<?php
-					foreach($result as $item) {
-				?>
-					<tr class="board_tb">
-						<td><?php echo $item["id"]; ?></td>
-						<td>
-							<!-- get방식 사용 -->
-							<a href="/homework/src/06_detail.php/?id=<?php echo $item["id"]; ?>&page=<?php echo $page_num; ?>">
-							<?php echo $item["title"]; ?>
-							<a>
-						</td>
-						<td><?php echo $item["create_at"]; ?></td>
-					</tr>
-				<?php
-					} 
-				?>
-			</table>
-        </div>  
+			<?php
+				} 
+			?>
+		</table>
         <!-- 페이징 처리  -->
         <div class="page_line">
-        <a class="page_num" href="/homework/src/04_list.php/?page=<?php echo $prev_page_num; ?>"><</a>
-            <?php 
-                // 사용자가 보고 있는 페이지 수에 색 넣기
-                // for($i = 1; $i <= $max_page_num; $i++) {
-                // 삼항 연산자로 돌리는 식 : 조건 ? 참일 때 처리 : 거짓일 때 처리
-                for($i = 1; $i <= $max_page_num; $i++) {
-                    $str = (int)$page_num === $i ? "bk-a" : ""; 
-            ?>
-        <a class="page_num <?php echo $str; ?>" href="/homework/src/04_list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-        <?php
-            }
-        ?>
-        <a class="page_num" href="/homework/src/04_list.php/?page=<?php echo $next_page_num; ?>">></a>
+			<!-- 이전 -->
+			<a class="page_num" href="/homework/src/04_list.php/?page=<?php echo $prev_page_num; ?>"><</a>
+				<?php 
+					for($i = 1; $i <= $max_page_num; $i++) {
+						$str = (int)$page_num === $i ? "bk-a" : ""; 
+				?>
+			<!-- 페이지 수 -->
+			<a class="page_num <?php echo $str; ?>" href="/homework/src/04_list.php/?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+			<?php
+				}
+			?>
+			<!-- 다음 -->
+			<a class="page_num" href="/homework/src/04_list.php/?page=<?php echo $next_page_num; ?>">></a>
         </div>
     </div>
 </body>
