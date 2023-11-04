@@ -84,7 +84,7 @@ a,a:hover {
     font-size: 25px;
     position: fixed;
     top: 200px;
-    left: 700px;
+    left: 650px;
 }
 /* 오른쪽에 띄워줄 문구 - 01, 02, 03 page에서 */
 .anything {
@@ -339,4 +339,29 @@ a,a:hover {
     font-size: 35px;
     line-height: 40px;
     color: rgba(255, 30, 0, 0.966);
+}
+/* 업데이트 페이지 */
+.update_btn {
+    display:inline-block;
+}
+#up_up, #up_de {
+    padding: 5px 10px;
+    position: fixed;
+    font-size: 35px;
+}
+#up_up {
+    top: 200px;
+    left: 1380px;
+    border: none;
+    background-color: transparent;
+}
+#up_de {
+    top: 200px;
+    left: 1450px;
+}
+#up_up:hover, #up_de:hover {
+    background-color: #ffffff3f;
+    color: rgb(53, 28, 199);
+    border-radius: 10px;
+    padding: 5px 10px;
 }

@@ -199,9 +199,9 @@ try {
                 </tr>
             </table>
             <!-- 페이지 버튼 -->
-            <div class="page_btn">
-                <button class="update_b" type="submit">수정</button>
-                <a href="/homework/src/06_detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
+            <div class="update_btn">
+                <button id="up_up" type="submit">수정</button>
+                <a id="up_de" href="/homework/src/06_detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
             </div>
         </div>
     </form> 
