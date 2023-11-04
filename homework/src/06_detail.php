@@ -108,11 +108,11 @@ try {
                 </colgroup>
                 <tr>
                     <td id="board_b">번호</td>
-                    <td id="board_c"><?php echo $item["id"]; ?></td>
+                    <td><?php echo $item["id"]; ?></td>
                 </tr>
                 <tr>
                     <td id="board_b">제목</td>
-                    <td id="board_c"><?php echo $item["title"]; ?></td>
+                    <td><?php echo $item["title"]; ?></td>
                 </tr>
                 <tr>
                     <td id="board_b">내용</td>
@@ -121,10 +121,10 @@ try {
             </table>
         </div>
         <!-- 페이지 버튼 -->
-        <div class="page_btn_list">
-            <a href="/homework/src/04_list.php/?page=<?php echo $page; ?>">목록</a>
-            <a href="/homework/src/08_update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >수정</a>
-            <a href="/homework/src/07_delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >삭제</a>
+        <div class="list_btn">
+            <a id="list_li" href="/homework/src/04_list.php/?page=<?php echo $page; ?>">목록</a>
+            <a id="list_up" href="/homework/src/08_update.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >수정</a>
+            <a id="list_de" href="/homework/src/07_delete.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>" >삭제</a>
         </div> 
     </form>    
     <!-- javascript -->

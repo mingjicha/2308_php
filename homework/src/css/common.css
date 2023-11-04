@@ -152,7 +152,7 @@ a,a:hover {
     50%{border-right: 1px solid #000} 
     100%{border-right: 1px solid #fff} 
 }
-/* 버튼 공통 요소 */
+/* 리스트 페이지 버튼 */
 .page_btn {
     font-size: 40px;
     padding: 5px 10px;
@@ -167,7 +167,7 @@ a,a:hover {
 .insert_btn {
     width: 180px;
     top: 200px;
-    left: 1400px;
+    left: 1350px;
     text-align: center;
 }
 .page_btn_list {
@@ -246,17 +246,36 @@ a,a:hover {
 }
 .board td {
     font-size: 30px;
-    height: 70px;
     text-align: center;
 }
 #board_b {
     font-size: 40px;
 }
-#board_c {
-    /* background-color: rgba(255, 255, 255, 0.5);
-    width: 70%;
-	height: 70%; */
-    font-size: 30px;
+.list_btn {
+    display:inline-block;
+}
+#list_li, #list_up, #list_de {
+    padding: 5px 10px;
+    position: fixed;
+    font-size: 35px;
+}
+#list_li {
+    top: 200px;
+    left: 1320px;
+}
+#list_up {
+    top: 200px;
+    left: 1390px;
+}
+#list_de {
+    top: 200px;
+    left: 1460px;
+}
+#list_li:hover, #list_up:hover, #list_de:hover {
+    background-color: #ffffff3f;
+    color: rgb(53, 28, 199);
+    border-radius: 10px;
+    padding: 5px 10px;
 }
 /* 인서트 페이지 */
 .input_tit {
@@ -278,10 +297,22 @@ a,a:hover {
 	background-color: rgba(255, 255, 255, 0.5);
 	outline: none;
 }
-
-/* 삭제 확인 문구 */
+/* 삭제 페이지 */
+.del_del {
+    position: fixed;
+    top: 200px;
+    left: 1200px;
+}
 .del_btn {
-    font-size: 50px;
-    line-height: 60px;
+    text-align:center;
+    border: none;
+}
+/* 삭제 확인 문구 */
+.del_con {
+    position: fixed;
+    top: 200px;
+    left: 700px;
+    font-size: 35px;
+    line-height: 40px;
     color: rgba(255, 30, 0, 0.966);
 }

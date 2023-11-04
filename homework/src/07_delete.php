@@ -126,9 +126,8 @@ try {
     <!-- 오른쪽 메인 게시판 -->
     <div class="main">
         <!-- 삭제 화인 문구 -->
-        <div>
-            <p>삭제 할고야,,?</p>
-            <p>진짜 삭제한다???</p>
+        <div class="del_con">
+            <p>삭제 할고야,,? 진짜 삭제한다???</p>
         </div> 
         <!-- 게시글 삭제 화면 -->
         <table class="board">
@@ -158,8 +157,8 @@ try {
             <form action="/homework/src/07_delete.php" method="post">
                 <!-- 페이지 버튼 -->
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
-                <div>
-                <button type="submit">삭제</button>
+                <div class="del_del">
+                <button type="submit" class="del_btn">삭제</button>
                     <a href="/homework/src/06_detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
                 </div>
             </form>
