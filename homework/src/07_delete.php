@@ -158,7 +158,7 @@ try {
                 <!-- 페이지 버튼 -->
                 <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="del_del">
-                <button type="submit" class="del_btn">삭제</button>
+                    <button type="submit" class="del_btn">삭제</button>
                     <a href="/homework/src/06_detail.php/?id=<?php echo $id; ?>&page=<?php echo $page; ?>">취소</a>
                 </div>
             </form>

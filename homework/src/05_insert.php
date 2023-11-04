@@ -131,8 +131,8 @@ if($http_method === "POST") {
 			</table>
 			<!-- 페이지 버튼 -->
 			<div class="insert_in">
-				<button class="in_in" type="submit">작성</button>
-				<a class="in_de" href="/homework/src/04_list.php">취소</a>
+				<button id="in_in" type="submit">작성</button>
+				<a id="in_de" href="/homework/src/04_list.php">취소</a>
 			</div>
     	</div> 
 	</form>
