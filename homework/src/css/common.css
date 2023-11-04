@@ -322,20 +322,35 @@ a,a:hover {
     padding: 5px 10px;
 }
 /* 삭제 페이지 */
-.del_del {
-    position: fixed;
-    top: 200px;
-    left: 1200px;
+.delet_btn {
+    display:inline-block;
 }
-.del_btn {
-    text-align:center;
+#del_de, #del_li {
+    padding: 5px 10px;
+    position: fixed;
+    font-size: 35px;
+}
+#del_de {
+    top: 200px;
+    left: 1380px;
     border: none;
+    background-color: transparent;
+}
+#del_li {
+    top: 200px;
+    left: 1450px;
+}
+#del_de:hover, #del_li:hover {
+    background-color: #ffffff3f;
+    color: rgb(53, 28, 199);
+    border-radius: 10px;
+    padding: 5px 10px;
 }
 /* 삭제 확인 문구 */
 .del_con {
     position: fixed;
     top: 200px;
-    left: 700px;
+    left: 850px;
     font-size: 35px;
     line-height: 40px;
     color: rgba(255, 30, 0, 0.966);
