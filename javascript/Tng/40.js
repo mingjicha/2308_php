@@ -29,7 +29,7 @@ const CORRECT = document.getElementById('correct');
 
 let i = true; // 실행을 위한 true
 
-// 두근두근 알러트 생성 11-14line 참고해서
+// 두근두근 알러트 생성 11-14line - 참고해서
 HINT.addEventListener('mouseenter', div_hint); // 아래 함수를 만족 시키면, ~이렇게
 function div_hint() { 
     if(i) { // i가 true라면 -> HINT에 mouseenter가 되는게 실행이 된다면

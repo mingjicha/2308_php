@@ -1,5 +1,5 @@
 <?php
-// HTTP 통신 // 04_146_ex1_http_get_method 참고
+// HTTP 통신 // 04_146_ex1_http_get_method - 참고
 // 통신을 하는데 있어서 메소드라는 걸 지정해서 어떤 처리를 할거다 라는 걸 미리 약속 함 ex) GET, POST
 // GET Mehtod url 파라미터 부분에 키와 값을 세트로 해서 설정하기 떄문에 쉽게 외부에서 어떤값이 들어가는 지 확인할 수 있음 - 보안성 취약
 // ?pagd=2&num=10

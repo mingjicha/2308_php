@@ -198,7 +198,7 @@ textarea {
 	background-color: rgba(255, 255, 255, 0.6);
 	outline: none;
 }
-/* backdrop-filter 참고 https://brunch.co.kr/@skykamja24/505*/
+/* backdrop-filter - 참고 https://brunch.co.kr/@skykamja24/505*/
 .detail_tb {
 	width: 1000px;
 	margin: 0 auto;

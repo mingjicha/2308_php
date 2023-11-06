@@ -8,7 +8,7 @@ xcopy D:\workspace\2308_php\side_project\mini_multi_board C:\Apache24\htdocs\min
         - Controller : 모델(+ 로직)과 뷰를 연결해주는 다리 역할
 
     객체지향의 가장 기본 베이스가 되는 
-    참고 : https://m.blog.naver.com/jhc9639/220967034588
+    - 참고 : https://m.blog.naver.com/jhc9639/220967034588
     
 2. Apache - httpd.conf 파일 수정
 	- 주석 해제       

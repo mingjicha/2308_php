@@ -10,7 +10,7 @@ require_once("config.php"); // 설정 파일 불러오기
 require_once("autoload.php"); // 오토로드 파일 불러오기 
 
 // echo _EXTENSION_PHP; // config 연결 확인하기
-// 라우터 호출
+// 라우터 호출 : 라우터(Router)는 서로 다른 네트워크 사이에서 통신 경로를 지정해주고 데이터가 전송되도록 중간에서 중계해주는 장치이다
 new router\Router(); // 라우터 파일 경로를 적고 호출
 
 

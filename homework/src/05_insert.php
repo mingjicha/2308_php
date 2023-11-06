@@ -35,7 +35,7 @@ if($http_method === "POST") {
 				throw new Exception("DB Error : PDO Instance");
 			}
 			$conn->beginTransaction(); // 트랜잭션 시작 auto commit 끔
-			// https://www.php.net/manual/en/pdo.begintransaction.php beginTransaction() 참고
+			// https://www.php.net/manual/en/pdo.begintransaction.php beginTransaction() - 참고
 
 			// insert
 			if(!db_insert_boards($conn, $arr_post)) {

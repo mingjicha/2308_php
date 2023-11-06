@@ -6,7 +6,7 @@ BTN_API.addEventListener('click', my_fetch); // 호출버튼 클릭 시 my_fetch
 function my_fetch() { // my_fetch란?
     const INPUT_URL = document.querySelector('#input-url'); // text입력값 input_url 생성
     
-    // fetch-then-catch -> https://triplexblog.kr/79 참고하기
+    // fetch-then-catch -> https://triplexblog.kr/79 - 참고하기
     fetch(INPUT_URL.value.trim()) // input에 들어가는 값을 공백없이 받아주겠다.
     .then( reponse => { // json으로 작업 결과 확인
         if( reponse.status >= 200 && reponse.status < 300 ){ 

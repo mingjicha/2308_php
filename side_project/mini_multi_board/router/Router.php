@@ -54,6 +54,12 @@ class Router {
             if($method === "GET") {
                 new BoardController("listGet");
             }
+        } else if($url === "board/add") {
+            if($method === "GET") {
+                // 처리 없음
+            } else {
+                new BoardController("addPost");
+            }
         }
         // 없는 경로일 경우 
         echo "이상한 URL : ".$url; // GET, POST 둘다 아니라면

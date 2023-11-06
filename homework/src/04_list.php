@@ -18,7 +18,7 @@ try {
 	// ---------------
 	// 페이징 처리
 	// ---------------
-	// https://velog.io/@dpdnjs402/qnwsh7kt 참고 
+	// https://velog.io/@dpdnjs402/qnwsh7kt - 참고 
 	$list_cnt = 5; // 한 페이지 최대 표시할 페이지 수
 	$page_num = 1; // 페이지 번호 초기화 > 초기 세팅
 
@@ -38,7 +38,7 @@ try {
 		$page_num = $_GET["page"]; // 유저가 보내온 페이지 셋팅 > 페이지 저장
 	}
 
-	$offset = ($page_num - 1) * $list_cnt; // 오프셋 계산 https://betterdev.tistory.com/17 참고
+	$offset = ($page_num - 1) * $list_cnt; // 오프셋 계산 https://betterdev.tistory.com/17 - 참고
 	// offset = (현재 페이지 번호 - 1) * 페이지 당 요청하는 자료 개수
 
 	// 이전버튼(prev)

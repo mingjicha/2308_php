@@ -15,7 +15,7 @@
 // 파라미터 : PDO   &$conn
 // 리턴     : boolen
 // ---------------------------------
-// 02_064_ex1_function.php 레퍼런스 파라미터 참고
+// 02_064_ex1_function.php 레퍼런스 파라미터 - 참고
 function my_db_conn( &$conn ) {
 	// $db_host	= "localhost"; // host // del v002 ** 현업에서는 이력을 철저하게 남겨둔다
 	$db_host	= "localhost"; // host // add v002

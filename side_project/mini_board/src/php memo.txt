@@ -2,5 +2,5 @@ detail > insert > list
 수정하고 취소하고 했을 때 지정해준 id, page 값이 돌아갈 때도 같은 곳인지 확인하기 !!!
 
 ------------1stproject
-1. isset (참고) https://www.codingfactory.net/10067 
-2. continue (참고) https://devjhs.tistory.com/201
+1. isset (- 참고) https://www.codingfactory.net/10067 
+2. continue (- 참고) https://devjhs.tistory.com/201

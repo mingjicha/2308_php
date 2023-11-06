@@ -3,7 +3,7 @@
 namespace model;
 
 // 부모를 상속 받아서 쓰니까 extends 사용
-class UserModel extends ParentsModel{
+class UserModel extends ParentsModel {
     public function getUserInfo($arrUserInfo, $pwFlg = false) {
         $sql =
             " SELECT "

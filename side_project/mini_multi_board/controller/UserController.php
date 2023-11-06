@@ -30,8 +30,8 @@ class UserController extends ParentsController {
             return "view/login.php";
         }
         // 유저정보 확인 후 정상인 유저들을 세션 u_id 저장
-        $_SESSION["u_id"] = $resultUserInfo[0]["u_id"];
-        return "Location: /board/list";
+        $_SESSION["u_pk"] = $resultUserInfo[0]["id"];
+        return "Location: /board/list?b_type=0";
     }
     // 로그아웃 처리(GET)
     protected function logoutGet() {

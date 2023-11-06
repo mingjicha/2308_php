@@ -7,7 +7,7 @@ define("ERROR_MSG_PARAM", "⛔ %s을 입력해 주세요."); //파라미터 에�
 require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
 // POST로 request가 왔을 때 처리
-// 데이터를 담아서 서버에게 요청하는 GET방식과 POST방식 https://mommoo.tistory.com/60, https://free-eunb.tistory.com/41 참고
+// 데이터를 담아서 서버에게 요청하는 GET방식과 POST방식 https://mommoo.tistory.com/60, https://free-eunb.tistory.com/41 - 참고
 // HTTP 패킷
 $conn = null; // DB Connection 변수
 $http_method = $_SERVER["REQUEST_METHOD"]; // Method 무슨 방식으로 가져오는 지 확인
@@ -45,7 +45,7 @@ if($http_method === "POST") {
 				throw new Exception("DB Error : PDO Instance");
 			}
 			$conn->beginTransaction(); // 트랜잭션 시작 auto commit 끔
-			// https://www.php.net/manual/en/pdo.begintransaction.php beginTransaction() 참고
+			// https://www.php.net/manual/en/pdo.begintransaction.php beginTransaction() - 참고
 
 			// insert
 			if(!db_insert_boards($conn, $arr_post)) {

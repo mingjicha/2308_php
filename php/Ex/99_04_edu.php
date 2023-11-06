@@ -1,5 +1,5 @@
 <?php
-// class 객체 지향을 할 때 사용하는 문법 // 03_105_ex1_classBasic.php 참고
+// class 객체 지향을 할 때 사용하는 문법 // 03_105_ex1_classBasic.php - 참고
 // 사용하는 이유 ? 소스의 재사용을 위해 함수를 만들어서 씀
 // 함수만으로는 한계가 있기 때문에 많이 쪼개기도 힘들고 함수는 어디서든 접근할 수 있음 그래서 보안성이 취약함
 // 객체 지향은 해당 권한이 있는 사람만 접근 가능, 각각 필요한 걸로만 모아져 있음
@@ -26,7 +26,7 @@
 // // private method Car::move() 오류가 뜸 권한이 없어서 클래스 외부에서 사용 할 수 없음 
 // $obj->auto();
 
-// // php: exception 검색해서 참고
+// // php: exception 검색해서 - 참고
 // new PDO;
 // new Exception();
 // new DateTime;
@@ -53,7 +53,7 @@ class Car {
     }
 }
 
-// php 부모클래스 접근 검색해서 참고
+// php 부모클래스 접근 검색해서 - 참고
 class Kia extends Car { // Kia가 Car를 상속받았기 때문에 부모한테 protected정의된 거한테 접근 가능
     public function __construct($name) {
         $this->name = $name;
