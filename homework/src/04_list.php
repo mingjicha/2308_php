@@ -20,7 +20,7 @@ try {
 	// ---------------
 	// https://velog.io/@dpdnjs402/qnwsh7kt - 참고 
 	$list_cnt = 5; // 한 페이지 최대 표시할 페이지 수
-	$page_num = 1; // 페이지 번호 초기화 > 초기 세팅
+	$page_num = 1; // 페이지 번호 초기화 > 초기 셋팅
 
 	// 페이징을 구현하기 위해 구해야 할 값: prev, next, startPage, endPage
 	// 총 게시글 수 검색
@@ -33,7 +33,7 @@ try {
 	// $boards_cnt(전체 게시글 수) / $list_cnt(한 페이지 최대 표시할 게시글 수) 
 
 	// GET Method 
-	// $page_num 세팅
+	// $page_num 셋팅
 	if(isset($_GET["page"])) { // isset() 변수가 설정되면 true 없으면 false > 파라미터에 페이지가 들어갔냐 안 들어갔냐
 		$page_num = $_GET["page"]; // 유저가 보내온 페이지 셋팅 > 페이지 저장
 	}

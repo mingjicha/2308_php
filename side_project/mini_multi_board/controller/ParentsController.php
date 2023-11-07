@@ -25,11 +25,13 @@ class ParentsController {
     // 비로그인 시 접속 불가능한 URL 리스트 -> 비로그인 상태에서 board/list로 이동하려고 하면 다시 로그인 페이지로 돌아옴
     private $arrNeedAuth = [ // 후에 페이지 추가 될 때 여기서 추가로 작성해주면 자동으로 권한 추가됨 (만들어준 메소드 때문에)
         "board/list"
+        ,"board/add"
+        ,"board/detail"
     ];
 
     // https://devjhs.tistory.com/516 - __construct - 참고
     public function __construct($action) {
-        // view관련 chk 접속 url 세팅
+        // view관련 chk 접속 url 셋팅
         $this->controllerChkUrl = $_GET["url"];
 
         // 세션 시작 

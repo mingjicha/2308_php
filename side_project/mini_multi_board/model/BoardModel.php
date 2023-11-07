@@ -70,4 +70,36 @@ class BoardModel extends ParentsModel {
             exit();
         }
     }    
+    
+    // 디테일 조회
+
+    public function getBoardDetail($arrBoardDetailInfo) {
+        $sql =
+            " SELECT "
+            ." id "
+            ." ,u_pk "
+            ." ,b_title "
+            ." ,b_content "
+            ." ,b_img "
+            ." ,created_at "
+            ." ,update_at "
+            ." FROM board "
+            ." WHERE "
+            ."  id = :id "
+            ;
+
+        $prepare = [
+            ":id" => $arrBoardDetailInfo["id"]
+        ];
+
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($prepare);
+            $result = $stmt->fetchAll(); // 실행시킨 결과를 배열로 받아 줌
+            return $result;
+        } catch(Exception $e) {
+            echo "BoardModel->getBoardList Error : ".$e->getMessage();
+            exit();
+        }
+    }
 }

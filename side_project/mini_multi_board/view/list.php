@@ -25,122 +25,32 @@
       <?php
           foreach($this->arrBoardInfo as $item) {
       ?>
-            <div class="card">
+            <div class="card<?php echo $item["id"]; ?>" >
               <img src="<?php echo isset($item["b_img"]) ? "/"._PATH_USERIMG.$item["b_img"] : ""; ?>" class="card-img-top" alt="이미지 없어요">
               <div class="card-body">
                 <h5 class="card-title"><?php echo $item["b_title"] ?></h5>
                 <p class="card-text"><?php echo mb_substr($item["b_content"], 0, 10)."···" ?></p>
-                <button id="btnDetail" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalRaemi">변신</button>
+                <!-- <button id="btnDetail" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalRaemi">변신</button> -->
+                <button class="btn btn-warning" onclick="openDetail(<?php echo $item['id']?>); return false;">변신</button>
               </div>
             </div>
       <?php
           }
       ?>
     <!-- 상세 Modal -->
-    <div class="modal fade" id="modalRaemi" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="modalDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">레미</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="b_title">제목</h5>
+            <button type="button" onclick="closeDetailModal(); return false;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img src="/view/img/1.gif" alt=""><br>
-            박수 짝짝 등산장갑<br>
-            박수 짝짝 새로신는 신발<br>
-            박수 짝짝 신상원피스<br>
-            박수 짝짝 모자 걸치고오↗<br>
-            핑꾸 핑꾸 핫핑꾸쨩★
+            <p>작성일 : <span id="created_at"></span></p>
+            <p>수정일 : <span id="update_at"></span></p>
+            <img id="b_img" src="" alt="">
+            <p id="b_content">내용</p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="modalMay" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">메이</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="/view/img/2.gif" alt=""><br>
-            내 차롄가(굵직)<br>
-            박수 짝짝 노가다 목장갑<br>
-            박수 짝짝 어제 훔쳐온 힐<br>
-            박수 짝짝 안 빤지 3일 된 옷<br>
-            박수 짝짝 그.냥.모.자<br>
-            주먹 주먹 핵주먹 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="modalLove" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">사랑</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="/view/img/3.gif" alt=""><br>
-            내 차롄가(조신)<br>
-            박수 짝짝 수술용 장갑<br>
-            박수 짝짝 이거 사실 힐리스<br>
-            박수 짝짝 엄마가 사준 옷<br>
-            박수 짝짝 사실 내 대가리 텅텅<br>
-            꺾기 꺾기 팔꺾기
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="modalPurple" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">보라</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="/view/img/4.gif" alt=""><br>
-            내 차롄가(중2병)<br>
-            박수 짝짝 힙합 스웩<br>
-            박수 짝짝 인생 별거 없어<br>
-            박수 짝짝 개썅마이웨이<br>
-            박수 짝짝 나는 내멋대로 산닼<br>
-            허세 허세 개허세
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal fade" id="modalMomo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">모모</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="/view/img/5.gif" alt=""><br>
-            미안해 난 아직 업써😢
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- 작성 Modal -->
     <div class="modal fade" id="modalInsert" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">

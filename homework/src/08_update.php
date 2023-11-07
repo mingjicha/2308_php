@@ -18,8 +18,8 @@ try {
 
     // 첫번째 사용자가 처리할 수 없는 에러
     if($http_method === "GET") {
-        $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 세팅
-        $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // page 세팅
+        $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 셋팅
+        $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // page 셋팅
         
         if($id === "") {
 			$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "id");
@@ -35,11 +35,11 @@ try {
         // 두번째 사용자가 처리할 수 있는 에러
         } else {
             // POST Method
-            // 게시글 수정을 위해 파라미터 세팅
-            $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 세팅
-            $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 세팅
-            $title = trim(isset($_POST["title"]) ? trim($_POST["title"]) : ""); // title 세팅
-		    $content = trim(isset($_POST["content"]) ? trim($_POST["content"]) : ""); // content 세팅
+            // 게시글 수정을 위해 파라미터 셋팅
+            $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 셋팅
+            $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 셋팅
+            $title = trim(isset($_POST["title"]) ? trim($_POST["title"]) : ""); // title 셋팅
+		    $content = trim(isset($_POST["content"]) ? trim($_POST["content"]) : ""); // content 셋팅
             // id page는 표시해주기 위해서 한 번 더 id랑 page를 넣어줌
             if($id === "") {
                 $arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "id");

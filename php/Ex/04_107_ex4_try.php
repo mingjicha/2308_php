@@ -8,7 +8,7 @@ try {	// 우리가 실행하고 싶은 소스코드를 작성
 	my_db_conn($conn);
 	// SQL 작성
 	$sql = " SELECT * FROM EMPLOYEES WHERE emp_no = :emp_no "; // **SELECT에서 > SELEC로
-	// Prepared Statement 세팅
+	// Prepared Statement 셋팅
 	$arr_ps = [
 		":emp_no" => 10004
 	];

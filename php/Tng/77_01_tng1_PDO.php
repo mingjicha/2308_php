@@ -114,7 +114,7 @@ $sql = " SELECT "
 	." WHERE "
 	." 		emp_no = :emp_no ";
 
-// 3-2. Prepared Statement 세팅
+// 3-2. Prepared Statement 셋팅
 $arr_ps = [
 	":emp_no" => 500002
 ];

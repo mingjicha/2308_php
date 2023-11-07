@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>login</title>
+    <title>로그인</title>
 </head>
 <body class="vw-100 vh-100">
     <!-- 헤더 설정 -->
@@ -26,7 +26,8 @@
                 <label for="u_pw" class="form-label">비밀번호</label>
                 <input type="password" class="form-control" id="u_pw" name="u_pw">
             </div>
-            <button type="submit" class="btn btn-dark">로그인</button>
+            <button type="submit" class="btn btn-secondary">로그인</button>
+            <a href="/user/regist" class="btn btn-dark float-end">회원가입</a>
           </form>
     </main>
 

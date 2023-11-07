@@ -9,8 +9,8 @@ require_once(ROOT."lib/lib_db.php"); // DB관련 라이브러리
 
 $conn = null; // DB 연결용 변수
 // id가 있는지 확인, id가 있으면 id를 넣어주고 없으면 빈문자열을 넣어줘라 - 삼항 연산자 사용
-$id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 세팅
-$page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 세팅
+$id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 셋팅
+$page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 셋팅
 // var_dump($_GET);
 // var_dump($_POST);
 $http_method = $_SERVER["REQUEST_METHOD"]; // Method 무슨 방식으로 가져오는 지 확인
@@ -40,8 +40,8 @@ try {
 
     // 첫번째 사용자가 처리할 수 없는 에러
     if($http_method === "GET") {
-        $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 세팅
-        $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 세팅
+        $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 셋팅
+        $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 셋팅
         
         if($id === "") {
 			$arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "id");
@@ -57,11 +57,11 @@ try {
         // 두번째 사용자가 처리할 수 있는 에러
         } else {
             // POST Method
-            // 게시글 수정을 위해 파라미터 세팅
-            $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 세팅
-            $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 세팅
-            $title = trim(isset($_POST["title"]) ? trim($_POST["title"]) : ""); // title 세팅 // trim 왼쪽 오른쪽 공백을 없애줌
-		    $content = trim(isset($_POST["content"]) ? trim($_POST["content"]) : ""); // content 세팅
+            // 게시글 수정을 위해 파라미터 셋팅
+            $id = isset($_GET["id"]) ? $_GET["id"] : $_POST["id"]; // id 셋팅
+            $page = isset($_GET["page"]) ? $_GET["page"] : $_POST["page"]; // id 셋팅
+            $title = trim(isset($_POST["title"]) ? trim($_POST["title"]) : ""); // title 셋팅 // trim 왼쪽 오른쪽 공백을 없애줌
+		    $content = trim(isset($_POST["content"]) ? trim($_POST["content"]) : ""); // content 셋팅
             // id page는 표시해주기 위해서 한 번 더 id랑 page를 넣어줌
             if($id === "") {
                 $arr_err_msg[] = sprintf(ERROR_MSG_PARAM, "id");

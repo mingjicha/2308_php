@@ -14,7 +14,7 @@ $sql = " SELECT "
 	." 		emp_no = :emp_no " // ** 유저한테서 받는 거는 Prepared Statement
 	;
 
-// Prepared Statement 세팅
+// Prepared Statement 셋팅
 $arr_ps = [
 	":emp_no" => 10004	
 ];
