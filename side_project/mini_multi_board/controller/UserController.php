@@ -3,6 +3,7 @@
 namespace controller;
 
 use model\UserModel;
+use lib\Validation;
 
 // class 자식 extends 부모
 class UserController extends ParentsController {
@@ -13,11 +14,24 @@ class UserController extends ParentsController {
 
     // 로그인 처리(POST)
     protected function loginPost() {
+        $inputData = [
+            "u_id" => $_POST["u_id"]
+            ,"u_pw" => $_POST["u_pw"]
+        ];
+
+        // 유효성 체크(암호화 전에 먼저 해주고)
+        if(!validation::userChk($inputData)) {
+            $this->arrErrorMsg = Validation::getArrErrorMsg();
+            return "view/login.php";
+        }
+
+        // 유효성 체크에 문제가 없을 경우 암호화 해줌
         // ID, PW 설정(DB에서 사용할 데이터 가공)
         // 원본 데이터가 혹시나 바뀔 것을 대비하여 따로 만들어 놓기
         $arrInput = [];
         $arrInput["u_id"] = $_POST["u_id"];
         $arrInput["u_pw"] = $this->encryptionPassword($_POST["u_pw"]);
+
 
         // 유저정보 가져오기
         $modelUser = new UserModel();
@@ -49,45 +63,31 @@ class UserController extends ParentsController {
 
     // 회원가입 처리
     Protected function registPost() {
-        $u_id = $_POST["u_id"];
-        $u_pw = $_POST["u_pw"];
-        $u_pw_chk = $_POST["u_pw_chk"];
-        $u_name = $_POST["u_name"];
-        $arrAddUserInfo = [
-            "u_id" => $u_id
-            ,"u_pw" => $this->encryptionPassword($u_pw)
-            ,"u_name" => $u_name
+        $inputData = [
+            "u_id" => $_POST["u_id"]
+            ,"u_pw" => $_POST["u_pw"]
+            ,"u_pw_chk" => $_POST["u_pw_chk"]
+            ,"u_name" => $_POST["u_name"]
         ];
 
-        $patternId = "/^[a-zA-Z0-9]{8,20}$/";
-        $patternPw = "/^[a-zA-Z0-9!@]{8,20}$/";
-        $patternName = "/^[a-zA-Z가-힣]{2,20}$/u";
+        $arrAddUserInfo = [
+            "u_id" => $_POST["u_id"]
+            ,"u_pw" => $this->encryptionPassword($_POST["u_pw"])
+            ,"u_name" => $_POST["u_name"]
+        ];
 
-        if(preg_match($patternId, $u_id, $match) === 0) {
-            // ID 에러처리
-            $this->arrErrorMsg[] = "아이디는 영어 대소문자와 숫자로 8~20자로 입력해 주세요.";
-        }
-        if(preg_match($patternPw, $u_pw, $match) === 0) {
-            // PW 에러처리
-            $this->arrErrorMsg[] = "비밀번호는 영어 대소문자와 숫자, !, @로 8~20자로 입력해 주세요.";
-        }
-        if($u_pw !== $u_pw_chk) {
-            // PW 확인 에러처리
-            $this->arrErrorMsg[] = "비밀번호와 비밀번호 확인이 서로 다릅니다.";
-        }
-        if(preg_match($patternName, $u_name, $match) === 0) {
-            // NAME 에러처리
-            $this->arrErrorMsg[] = "이름은 영어 대소문자와 한글로 2~50자로 입력해 주세요.";
-        }
+       // TODO : 발리데이션 체크
 
-        // TODO : 아이디 중복 체크 필요
-
-        // 유형성 체크 실패
-        if(count($this->arrErrorMsg) > 0 ) {
-            return "view/regist.php";
-            exit();
+       
+       // 유형성 체크
+       if(!validation::userChk($inputData)) {
+           $this->arrErrorMsg = Validation::getArrErrorMsg();
+           return "view/regist.php";
         }
         
+        // TODO : 아이디 중복 체크 필요
+
+
         // 인서트 처리(유효성 체크 성공)
         $userModel = new UserModel();
         $userModel->beginTransaction();
