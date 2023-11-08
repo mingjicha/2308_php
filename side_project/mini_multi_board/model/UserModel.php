@@ -36,34 +36,56 @@ class UserModel extends ParentsModel {
             exit();
         }
     }
-    // 유저 정보 insert
-    public function addUserInfo($arrAddUserInfo) {
-        $sql =
-        " INSERT INTO user ( "
-        ." u_id "
-        ." ,u_pw "
-        ." ,u_name "
-        ." ) "
-        ." VALUES ( "
-        ." :u_id "
-        ." ,:u_pw "
-        ." ,:u_name "
-        ." ) "
-        ;
-    
-    $prepare = [
-        ":u_id" => $arrAddUserInfo["u_id"]
-        ,":u_pw" => $arrAddUserInfo["u_pw"]
-        ,":u_name" => $arrAddUserInfo["u_name"]
-    ];
+        // 유저 정보 insert
+        public function addUserInfo($arrAddUserInfo) {
+            $sql =
+            " INSERT INTO user ( "
+            ." u_id "
+            ." ,u_pw "
+            ." ,u_name "
+            ." ) "
+            ." VALUES ( "
+            ." :u_id "
+            ." ,:u_pw "
+            ." ,:u_name "
+            ." ) "
+            ;
+        
+        $prepare = [
+            ":u_id" => $arrAddUserInfo["u_id"]
+            ,":u_pw" => $arrAddUserInfo["u_pw"]
+            ,":u_name" => $arrAddUserInfo["u_name"]
+        ];
 
-    try {
-        $stmt = $this->conn->prepare($sql);
-        $result = $stmt->execute($prepare);
-        return $result;
-    } catch(Exception $e) {
-        echo "UserModel->addUserInfo Error : ".$e->getMessage();
-        exit();
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $result = $stmt->execute($prepare);
+            return $result;
+        } catch(Exception $e) {
+            echo "UserModel->addUserInfo Error : ".$e->getMessage();
+            exit();
+        }
+    }    
+    public function userIdCheck($u_id) {
+        $sql = 
+            " SELECT "
+            ."      count(u_id) as cnt"
+            ." FROM "
+            ."      user "
+            ." WHERE "
+            ."      u_id = :u_id "
+        ;
+        $prepare = [
+            ":u_id" => $u_id
+        ];
+        try {
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($prepare);
+            $result = $stmt->fetchAll();
+            return $result;
+        } catch (Exception $e) {
+            echo "UserModel->idChk Error: ". $e->getMessage();
+            exit();
+        }
     }
-}    
 }

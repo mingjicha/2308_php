@@ -79,7 +79,7 @@ class UserController extends ParentsController {
        // TODO : 발리데이션 체크
 
        
-       // 유형성 체크
+       // 유효성 체크
        if(!validation::userChk($inputData)) {
            $this->arrErrorMsg = Validation::getArrErrorMsg();
            return "view/regist.php";
@@ -103,6 +103,41 @@ class UserController extends ParentsController {
         return "Location: /user/login";
     }
 
+    // 아이디 중복 검사
+    protected function idChkPost() {
+		$errorFlg = "0";
+		$errorMsg = "";
+		$inputData = [
+			"u_id" => $_POST["u_id"]
+		];
+
+		// 유효성 체크
+		if(!Validation::userChk($inputData)) {
+			$errorFlg = "1";
+			$errorMsg = Validation::getArrErrorMsg()[0];
+		}
+
+		// 중복 체크
+		$userModel = new UserModel();
+		$result = $userModel->getUserInfo($inputData);
+		$userModel->destroy();
+
+		if(count($result) > 0) {
+			$errorFlg = "1";
+			$errorMsg = "중복된 아이디입니다.";
+		}
+
+		// response 처리
+		$response = [
+			"errflg" => $errorFlg
+			,"msg" => $errorMsg
+		];
+
+		header('Content-type: application/json');
+		echo json_encode($response);
+		exit();
+	}
+    
     // 비밀번호 암호화
     private function encryptionPassword($pw) {
         return base64_encode($pw);
