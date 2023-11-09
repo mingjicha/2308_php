@@ -81,7 +81,7 @@ class BoardController extends ParentsController {
         return "Location: /board/list?b_type=".$b_type;
     }
     // 상세 정보 API
-    Protected function detailGet() {
+    protected function detailGet() {
         $id = $_GET["id"];
 
         $arrBoardDetailInfo = [
@@ -93,6 +93,9 @@ class BoardController extends ParentsController {
 
         // 이미지 경로 재설정
         $result[0]["b_img"] = "/"._PATH_USERIMG.$result[0]["b_img"];
+
+        // 작성 유저 플래그 설정
+        $result[0]["uflg"] = $result[0]["u_pk"] === $_SESSION["u_pk"] ? "1" : "0";
 
         // 레스폰스 데이터 작성
         $arrTmp = [
@@ -107,4 +110,43 @@ class BoardController extends ParentsController {
         echo $response;
         exit();
     }
+    
+    // 게시글 삭제 API
+
+    protected function removeGet() {
+        $errFlg = "0";
+        $errMsg = "";
+        $arrDeleteBoardInfo = [
+            "id" => $_GET["id"]
+            ,"u_pk" => $_SESSION["u_pk"]
+        ];
+
+        // 삭제 처리
+        $boardModel = new BoardModel();
+        // 업데이트니까 트랜잭션 시작해줘야 함
+        $boardModel->beginTransaction();
+        $result = $boardModel->removeBoardCard($arrDeleteBoardInfo);
+
+        if($result !== 1) {
+            $errFlg = "1";
+            $errMsg = "날 벗어날 수 없으셈!!";
+            $boardModel->rollBack();
+        } else {
+            $boardModel->commit();
+        }
+
+        // 레스폰스 데이터 작성
+        $arrTmp = [
+            "errflg" => $errFlg
+            ,"msg" => $errMsg
+            ,"id" => $arrDeleteBoardInfo["id"]
+        ];
+        $response = json_encode($arrTmp);
+
+        // response 처리
+        header('Content-type: application/json');
+        echo $response;
+        exit();        
+    }
+    
 }
