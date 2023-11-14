@@ -149,3 +149,7 @@ Route::get('/child2', function () {
 });
 
 
+// DB관련 실습용
+use  App\Http\Controllers\BoardController; // 원래는 최상단에 적어야 함
+Route::get('/boards', [BoardController::class, 'index'])->name('board.index');
+
