@@ -11,12 +11,12 @@ class BoardController extends Controller
         // -----------
         // 쿼리빌더
         // -----------
+        // ------------------------------------SELECT 
         // $result = DB::select('select * from boards limit 10');
         
         // $result = DB::select('select * from boards limit :no', ['no' => 1]);
         // $result = DB::select('select * from boards limit ?', [1]);
         
-        // ------------------------------------SELECT 
 
         // [참고]
         // =SELECT [DISTINCT] [컬럼명]
@@ -71,7 +71,11 @@ class BoardController extends Controller
             GROUP BY cat.no
             ,cat.name'
             );
-
+            
+        // 트랜잭션
+        //DB::beginTransaction(); // 트랜잭션 시작
+        //DB::rollback(); // 롤백
+        //DB::commit(); // 커밋
         // ------------------------------------INSERT
         $sql = 
             'INSERT INTO boards(
