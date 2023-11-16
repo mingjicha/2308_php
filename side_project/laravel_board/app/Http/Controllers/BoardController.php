@@ -18,7 +18,7 @@ class BoardController extends Controller
     public function index()
     {   
 		/* del 231116 미들웨어로 이관
-        // // 로그인 체크
+        // 로그인 체크
         // if(!Auth::check()) {
         //     return redirect()->route('user.login.get');
         // }
@@ -27,7 +27,7 @@ class BoardController extends Controller
         // 게시글 획득
         $result = Board::get();
 
-        return view('list')->with('data', $result);
+        // return view('list')->with('data', $result);
     }
 
     /**
@@ -37,7 +37,7 @@ class BoardController extends Controller
      */
     public function create()
     {
-        return view('insert');
+        return view('create');
     }
 
     /**

@@ -63,10 +63,11 @@ class MyUserValidation
 
         // 유효성 검사 실패 시 (호)처리
         if($validator->fails()){
+            Log::debug("************** 유저 유효성 체크 종료 **************");
             return redirect('/'.$request->path())->withErrors($validator->errors());
         }
         
-        Log::debug("************** 유저 유효성 체크 종료 **************");
+        Log::debug("************ 유저 유효성 체크 정상 종료 ************");
         return $next($request);
     }
 }
