@@ -1,5 +1,6 @@
 터미널 주소 :
 xcopy D:\workspace\2308_php\side_project\mini_multi_board C:\Apache24\htdocs\mini_multi_board /E /Y
+미리보기 주소 : http://localhost/user/login
 
 1. MVC 패턴 
     MVC 패턴은 Model, View, Controller의 약자로 소프트웨어 디자인패턴 중 하나입니다.

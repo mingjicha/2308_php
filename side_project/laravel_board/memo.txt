@@ -1,0 +1,35 @@
+# https://laravel.kr/docs/8.x/queries 참고
+
+💌 Insert처리 💌 
+
+🍔 1. 아이콘을 눌렀을 때 글 작성 페이지로 이동
+1-1. view-list에서 아이콘을 만들어주기
+1-2. 아이콘을 눌렀을 때 이동이니까 눌렀을 때 페이지 이동하는 a태그를 사용
+1-3. a태그 안에 주소는 라라벨식의 route의 주소를 달아 주기
+1-4. route는 web.php에서 확인 가능
+	** GET사용 -> 눌렀을 때 작성 페이지로 이동
+1-5. route를 사용하여 이동하게 하려면 controller를 설정 
+	** create 함수에 view('insert') blade의 주소 쓰기
+
+🌭 2. 작성 페이지에서 글 작성 후 리스트 페이지로 이동
+2-1. view-insert에서 작성 버튼 만들어주기
+2-2. 버튼 누르면 작성처리 후 리스트로 이동
+2-3. insert는 내용 작성이니까 form 태그 써주기
+2-4. form태그 안에 route주소 달아주기
+	** 주의! @csrf 달아주기
+	** 글 작성 기능인 board.store
+	** POST사용 -> 작성 처리 후 리스트 페이지 이동
+2-5. 작성될 내용에 name 달아주기
+2-6. 달아준 name을 사용하여 controller설정
+	** store 함수에 결과값 제목, 내용을 저장해서 넘겨주기
+2-7. model에다가 fillable 수정 가능하게 설정
+	** 화이트리스트로 수정가능하게 할 수 있음
+
+🍕 3. 삭제 버튼을 눌렀을 때 삭제하기
+3-1. 삭제 버튼 생성
+3-2. form태그로 route 보내주기
+	** @csrf확인
+	** @method('delete') 삭제 메소드 확인
+	** 세그먼트 파라미터때문에 보내는 방법 확인
+3-3. 삭제 처리 controller 설정
+3-4. model에 softdeletes 설정

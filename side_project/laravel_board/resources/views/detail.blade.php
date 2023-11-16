@@ -1,19 +1,46 @@
 @extends('layout.layout')
 
-@section('title', 'List')
+@section('title', 'detail')
 
 @section('main')
-<main>
 
-    <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{$data->b_title}}</h5>
-          <p class="card-text">{{$data->b_content}}</p>
-          <p class="card-text">{{$data->b_hits}}</p>
-          <p class="card-text">{{$data->b_created_at}}</p>
-          <p class="card-text">{{$data->b_updated_at}}</p>
+<main class="d-flex justify-content-center align-items-center h-75">
+    @include('layout.errorlayout')
+    <div class="mb-3">
+        <p>글번호 : </p>
+        <p>{{$data->b_id}}</p>
+    </div>
+    <div class="mb-3">       
+        <p>제목  : </p>
+        <p>{{$data->b_title}}</p>
+    </div>
+    <div class="mb-3">
+        <p>내용 : </p>
+        <p>{{$data->b_content}}</p>
+    </div>
+    <div class="mb-3">
+        <p>조회수 : </p>
+        <p>{{$data->b_hits}}</p>
+    </div>
+    <div class="mb-3">
+        <p>작성일 : </p>
+        <p>{{$data->created_at}}</p>
+    </div>
+    <div class="mb-3">
+        <p>수정일 : </p>
+        <p>{{$data->updated_at}}</p>
+    </div>
+    <div>
+        <div class="card-footer">
+            <form action="{{route('board.destroy', ['board'=> $data->b_id])}}" method="POST" >
+                {{-- 폼태그로 보내주기 때문에 사용 --}}
+                @csrf
+                {{-- 블레이드 문법 --}}
+                @method('delete') 
+                <button type="submit" class="btn btn-danger">삭제</button>
+                <a href="{{route('board.index')}}" class="btn btn-dark">취소</a>
+            </form>
         </div>
     </div>
-
 </main>
 @endsection
