@@ -1,0 +1,2 @@
+# test 파일 생성 하는 법
+php artisan make:test BoardTest -> 앞에는 상관없지만 뒤에 Test는 적어줘야 함
