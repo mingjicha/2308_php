@@ -94,6 +94,9 @@ class BoardController extends Controller
     {
         // 게시글 데이터 획득
 		// $result = Board::where('b_id', $id)->get(); // 부등호 중 '='만 생략가능
+        $result = Board::find($id);
+
+        return view('update')->with('data', $result);
     }
 
     /**
@@ -105,7 +108,18 @@ class BoardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+		// 게시글 데이터 획득
+        $result = Board::find($id);
+
+		// 제목, 내용 수정
+		$result->b_title = $request->b_title;    
+		$result->b_content = $request->b_content;     
+
+		// 업데이트 처리
+		$result->save();
+
+        // return view('detail')->with('data', $result); 써도 되긴 하지만 계속 업데이트 처리가 돼서 redirect 쓰는게 맞음
+        return redirect()->route('board.show', ['board' => $result->b_id]);
     }
 
     /**

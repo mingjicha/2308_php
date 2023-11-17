@@ -18,7 +18,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ $item->b_title }}</h5>
                 <p class="card-text">{{ $item->b_content }}</p>
-                <a href="{{route('board.show', ['board'=> $item->b_id]) }}" class="btn btn-dark">상세</a>
+                <a href="{{route('board.show', ['board'=> $item->b_id]) }}" class="btn btn-outline-dark">상세</a>
             </div>
         </div>
     @empty

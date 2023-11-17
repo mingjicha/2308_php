@@ -33,6 +33,6 @@ Route::middleware('auth')->resource('/board', BoardController::class);
 // GET|HEAD        board/create ...................................................... board.create › BoardController@create 글 작성
 // 세그먼트 파라미터는 form에서 보내는 방법이 따로 있음 ex) {board}
 // GET|HEAD        board/{board} ......................................................... board.show › BoardController@show 
-// PUT|PATCH       board/{board} ..................................................... board.update › BoardController@update
+// PUT|PATCH       board/{board} ..................................................... board.update › BoardController@update 글 수정 기능
 // DELETE          board/{board} ................................................... board.destroy › BoardController@destroy 글 삭제
-// GET|HEAD        board/{board}/edit .................................................... board.edit › BoardController@edit
+// GET|HEAD        board/{board}/edit .................................................... board.edit › BoardController@edit 글 수정

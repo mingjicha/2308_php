@@ -22,9 +22,10 @@
                 {{-- 폼태그로 보내주기 때문에 사용 --}}
                 @csrf
                 {{-- 블레이드 문법 --}}
-                @method('delete') 
-                <button type="submit" class="btn btn-danger">삭제</button>
-                <a href="{{route('board.index')}}" class="btn btn-dark">취소</a>
+                @method('DELETE') 
+                <button type="submit" class="btn btn-outline-danger">삭제</button>
+                <a href="{{route('board.edit', ['board'=> $data->b_id])}}" class="btn btn-outline-warning">수정</a>
+                <a href="{{route('board.index')}}" class="btn btn-outline-dark">취소</a>
             </form>
         </div>
     </div>
