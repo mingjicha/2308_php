@@ -50,7 +50,7 @@
   <div>
     <!-- for문 사용하기 -->
     <ProductList
-      v-for="(item, i) in products" :key="i"
+      v-for = "(item, i) in products" :key="i"
       :data = "item"
       :productKey = "i"
       @fncReport = "plusOne" 
@@ -131,6 +131,7 @@ export default {
       this.modalFlg = false;
     }
   },
+  
   // components : 컴포넌트를 등록하는 영역
   components: {
     Discount, 

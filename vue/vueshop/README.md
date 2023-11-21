@@ -125,4 +125,6 @@ Transition
 	조건부로 class명을 추가 하고 싶을 때,
 	:class="{ 클레스명 : 조건}" 객체를 넣으면 조건이 true일때만 동작
 
+vue 라이프사이플 다이어그램
+	https://ko.vuejs.org/guide/essentials/lifecycle.html
 -----------------------------------------------------------------------
