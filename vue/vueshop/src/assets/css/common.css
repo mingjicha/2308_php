@@ -9,6 +9,9 @@
 	padding: 10px;
 	text-decoration: none;
 }
+.nav_a {
+	font-size: 1.3rem;
+}
 
 /* 모달 */
 .bg_black {
@@ -25,6 +28,15 @@
 	border-radius: 10px;
 	padding: 20px;
 	margin: 20px auto;
+}
+
+/* 할인 배너 */
+.discount {
+	background-color: rgb(255, 241, 214);
+	padding: 20px;
+	margin: 10px;
+	border-radius: 10px;
+	font-size: 1.5rem;
 }
 
 /* 모달 open 애니메이션 */

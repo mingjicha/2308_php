@@ -23,7 +23,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-
+웹 열기 http://localhost:8080/
 서버 열기  npm run serve
 열기 전에 node_modules 폴더가 없다면 npm install 부터
 

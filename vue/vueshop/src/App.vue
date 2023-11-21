@@ -1,33 +1,61 @@
 <template>
   <img alt="T1 logo" src="./assets/img/tilogo.png">
 
-  <!-- 헤더 -->
-  <div class="nav">
-    <!-- <a href="#">홈</a>
+<!-- 헤더 -->
+<!-- 자식 Header.vue에 데이터 보내기 -->
+<Header :data="navList"></Header>
+  <!-- <div class="nav">
+    <a href="#">홈</a>
     <a href="#">상품</a>
-    <a href="#">기타</a> -->
+    <a href="#">기타</a>
     
-    <!-- 반복문 -->
-    <a v-for="item in navList" :key="item">{{ item }}</a>
-    <!-- <a v-for="(item, i) in navList" :key="i">{{ i + ' : ' + item }}</a> -->
-  </div>
+     반복문
+    <a v-for="item in navList" :key="item" class="nav_a">{{ item }}</a>
+    <a v-for="(item, i) in navList" :key="i">{{ i + ' : ' + item }}</a>
+  </div> -->
+
+<!-- 할인 배너 -->
+<!-- html에서 한번에 열고 닫기 -->
+<Discount/> 
+<!-- 컴포넌트로 이관
+<div class="discount">
+  <p>지금 당장 구매하시면, 30% 할인</p>
+</div> -->
 
   <!-- 모달 -->
+  <!-- 애니메이션 넣기 위한 태그 transition -->
   <transition name="modalAni">
-    <div class="bg_black" v-if="modalFlg" >
+    <!-- if문 사용하기 -->
+    <Modal 
+      v-if = "modalFlg"
+      :data = "modalProduct"
+      @closeModal = "modalClose" 
+    ></Modal>
+    <!-- 컴포넌트로 이관 -->
+    <!-- <div class="bg_black" v-if="modalFlg" >
       <div class="bg_white">
         <img :src="modalProduct.img" alt="img">
         <h4>상품명 : {{ modalProduct.name }}</h4>
         <p>상품 설명 : {{ modalProduct.content }}</p>
         <p>가격 : {{ modalProduct.price }} 원</p>
-        <p>신고수 : {{ modalProduct.reportCnt }}</p>
-        <button @click="modalFlg                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            = false">닫기</button>
+        <p>신고수 : {{ modalProduct.reportCnt }}</p> -->
+        <!-- <button @click="modalFlg = false">닫기</button> -->
+        <!-- 함수를 만들어서 사용 -->
+        <!-- <button @click="modalClose()">닫기</button>
       </div>
-    </div>
+    </div> -->
   </transition>
 
   <!-- 상품 리스트 -->
   <div>
+    <!-- for문 사용하기 -->
+    <ProductList
+      v-for="(item, i) in products" :key="i"
+      :data = "item"
+      :productKey = "i"
+      @fncReport = "plusOne" 
+      @fncOpenModal = "modalOpen" 
+    ></ProductList>
       <!-- <div>
         style은 속성 앞에다가 콜론 넣고 우리가 데이터 바인딩에 만들어둔 명을 쓰면 됨
         <h4 :style="sty_color_red">{{ products[0] }}</h4>
@@ -43,14 +71,14 @@
         <p>{{ prices[2] }} 원</p>
       </div> -->
 
-      <div v-for="(item, i) in products" :key="item">
-        <!-- <h4 :style="sty_color_blue" @click="modalFlg = true; modalProduct=item;">{{ item.name }}</h4> -->
+      <!-- <div v-for="(item, i) in products" :key="item">
+        <h4 :style="sty_color_blue" @click="modalFlg = true; modalProduct=item;">{{ item.name }}</h4>
         <h4 @click="modalFlg = true; modalProduct=item;">{{ item.name }}</h4>
         <p>{{ item.price }} 원</p>
         <button @click="plusOne(i)">허위 매물 신고</button>
-        <!-- <button @mouseover="item.reportCnt++">허위 매물 신고</button> -->
+        <button @mouseover="item.reportCnt++">허위 매물 신고</button>
         <span> 신고수 : {{ item.reportCnt }}</span>
-      </div>
+      </div> -->
   </div>
 </template>
 
@@ -58,6 +86,14 @@
 <script>
 // 자바스크립트 연결
 import data from './assets/js/data.js';
+// Discount.vue 연결
+import Discount from './components/Discount.vue';
+// Header.vue 연결
+import Header from './components/Header.vue';
+// Modal.vue 연결
+import Modal from './components/Modal.vue';
+// ProductList.vue 연결
+import ProductList from './components/ProductList.vue';
 
 export default {
   name: 'App',
@@ -74,6 +110,8 @@ export default {
       //   {name: '2023 T1 Uniform Worlds Jacket - Black', content: '제오페구케 드디어!!', price: '149,000', reportCnt: 0, img: require('./assets/img/01.jpg')},
       //   {name: '2023 T1 Uniform Worlds Pants', content: '멋지다 진짜루!!', price: '89,000', reportCnt: 0, img: require('./assets/img/02.jpg')},
       // ],
+
+      // products의 data는 data.js에 설정함
       products: data,
       modalFlg: false,
       modalProduct: {}
@@ -88,7 +126,17 @@ export default {
     modalOpen(item) {
       this.modalFlg = true;
       this.modalProduct = item;
+    },
+    modalClose() {
+      this.modalFlg = false;
     }
+  },
+  // components : 컴포넌트를 등록하는 영역
+  components: {
+    Discount, 
+    Header, 
+    Modal, 
+    ProductList,
   },
 }
 
