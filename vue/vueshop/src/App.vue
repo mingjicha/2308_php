@@ -4,6 +4,7 @@
 <!-- 헤더 -->
 <!-- 자식 Header.vue에 데이터 보내기 -->
 <Header :data="navList"></Header>
+<img alt="Faker" src="./assets/img/opgg_faker.png" class="faker">
   <!-- <div class="nav">
     <a href="#">홈</a>
     <a href="#">상품</a>
