@@ -26,6 +26,10 @@
   <button 
     v-if="$store.state.lastBoardId > 1 && $store.state.flgTabUI === 0"
     @click="loadMore">더보기</button>
+  <!-- 다른 방법  
+    <button 
+    @click="$store.dispatch('actionGetBoardItem')"
+    v-if="$store.state.flgBtnMoreView && $store.state.flgTabUI === 0">더보기</button> -->
 
   <!-- 푸터 -->
   <div class="footer">

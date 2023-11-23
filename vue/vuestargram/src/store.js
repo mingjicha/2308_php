@@ -14,6 +14,7 @@ const store = createStore({
             imgURL: '', // 작성탭 표시용 이미지 URL 저장용
             postFileData: null, // 객체로 올거임, 글 작성 파일 데이터 저장용
             lastBoardId: 0, // 가장 마지막 로드된 게시글 번호 저장용
+            flgBtnMoreView: true, // 더보기 버튼 활성여부 플래그
         }
     },
 
@@ -24,6 +25,11 @@ const store = createStore({
         setBoardList(state, data) { // 첫번째는 state로 넣는게 문법
             state.boardData = data;
             state.lastBoardId = data[data.length - 1].id; // 화면에 3개씩 띄우니까 3개씩 데이터를 가져오고 여기서 -1을 해서 화면에 띄워주는 마지막 번호인 배열의 2번방의 id를 가져올 수 있음 [ 0, 1, 2 ]
+            this.commit('setLastBoardId', data[data.length - 1].id);
+		},
+		// 마지막 게시글 번호 셋팅용
+		setLastBoardId(state, num) {
+			state.lastBoardId = num;
         },
         // 탭 UI 셋팅용
         setFlgTabUI(state, num) {
@@ -51,7 +57,16 @@ const store = createStore({
         setClearAddData(state) {
             state.imgURL = '';
             state.postFileData = null;
-        },
+            this.commit('setPostFileData', null);
+		},
+		// // 더보기 데이터 추가
+		// setAddBoardData(state, data) {
+		// 	state.boardData.push(data);
+		// },
+		// // 더보기 버튼 활성화
+		// setFlgBtnMoreView(state, boo) {
+		// 	state.flgBtnMoreView = boo;
+        // },
     },
     // actions : ajax로 서버에 데이터를 요청할 때나 시간 함수 등 비동기 처리를 정의하는 영역
     actions: {
@@ -122,10 +137,15 @@ const store = createStore({
                 if(res.data) {
                     // 화면에 출력해줌
                     context.commit('setPushBoard', res.data);
+                    // // 데이터 있을 경우
+					// context.commit('setAddBoardData', res.data);
+					// context.commit('setLastBoardId', res.data.id);
                 } else {
                     // res.data에 데이터가 없을 경우 lastBoardId 초기화로 0 설정 함
                     // App.vue에서 v-if="$store.state.lastBoardId > 1" 설정해줬으니까 0이라서 더보기는 사라지게 함
                     context.state.lastBoardId = 0;
+                    // // 데이터 없을 경우
+					// context.commit('setFlgBtnMoreView', false);
                 }
                 // 데이터가 없을 때 동작을 안 한다면
 
