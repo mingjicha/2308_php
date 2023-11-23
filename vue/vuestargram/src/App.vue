@@ -22,8 +22,9 @@
 
   <!-- 더보기 버튼 -->
   <!-- 데이터 없을 경우(마지막 값이 1일 때) 더보기 없애기 : v-if -->
+  <!-- ajax 통신 -> action -->
   <button 
-    v-if="$store.state.lastBoardId > 1"
+    v-if="$store.state.lastBoardId > 1 && $store.state.flgTabUI === 0"
     @click="loadMore">더보기</button>
 
   <!-- 푸터 -->

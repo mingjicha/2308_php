@@ -20,10 +20,10 @@ const store = createStore({
     // mutations : 데이터 수정하는 함수를 저장하는 영역
     // vuex는 데이터를 변경할 수 있는 셋팅용을 세트로 만들어 줘야 함
     mutations: {
-        // 초기 데이터 셋팅용
+        // 초기 데이터 셋팅용 (처음 화면 띄우기)
         setBoardList(state, data) { // 첫번째는 state로 넣는게 문법
             state.boardData = data;
-            state.lastBoardId = data[data.length - 1].id; // 마지막 게시글 번호 0번방 시작이니까 , 모든 데이터 3개씩 띄우기 위해 length - 1 사용
+            state.lastBoardId = data[data.length - 1].id; // 화면에 3개씩 띄우니까 3개씩 데이터를 가져오고 여기서 -1을 해서 화면에 띄워주는 마지막 번호인 배열의 2번방의 id를 가져올 수 있음 [ 0, 1, 2 ]
         },
         // 탭 UI 셋팅용
         setFlgTabUI(state, num) {
@@ -111,8 +111,8 @@ const store = createStore({
         actionGetLoadMore(context) {
             const url = 'http://112.222.157.156:6006/api/boards/' + context.state.lastBoardId; // url에 파라미터 값 넣어주기
             const header = {
-                headers: {
-                    'Authorization': 'Bearer meerkat',
+                headers: { // 인증용
+                    'Authorization': 'Bearer meerkat', // Authorization 값이 Bearer meerkat이어야 인증이 돼서 데이터를 불러오는 것 
                 }
             };
 
@@ -123,7 +123,8 @@ const store = createStore({
                     // 화면에 출력해줌
                     context.commit('setPushBoard', res.data);
                 } else {
-                    // res.data에 데이터가 없을 경우 lastBoardId 초기화로 0 설정 App.vue에서 v-if="$store.state.lastBoardId > 1" 설정해줬으니까 0이라서 더보기는 사라진다
+                    // res.data에 데이터가 없을 경우 lastBoardId 초기화로 0 설정 함
+                    // App.vue에서 v-if="$store.state.lastBoardId > 1" 설정해줬으니까 0이라서 더보기는 사라지게 함
                     context.state.lastBoardId = 0;
                 }
                 // 데이터가 없을 때 동작을 안 한다면
