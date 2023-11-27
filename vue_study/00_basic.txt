@@ -1,0 +1,14 @@
+Q. html을 조건부로 보여주고 싶다.
+    React : tenary operator, && ||, if else, enum
+    Vue : v-if, v-else
+
+vue는 방법이 하나 
+- vue 문법 몇개만 외워주면 초보도 output 쉬움
+
+React 실력 === 자바스크립트 실력
+
+# 자바스크립트 기초
+Array Object에 데이터 입력, 출력하는 법
+function
+if else
+for 반복문

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+</head>
+<body>
+    <!-- 자바스크립트 웹 개발 : html 조작과 변경을 위해 사용 -->
+
+    <H2 id="hello">안녕하세요</H2>
+    <H2 id="hi">올때메로나</H2>
+    
+    <script>
+        // 자바스크립트 작성하는 곳✍
+
+        // ✔ H2에 적힌 안녕하세요를 반말로 변경해 주세요.
+        document.getElementById('hello').innerHTML = '안녕'; // html을 변경하는 문법
+        // [해석] 웹문서.(~의)HTML요소를 가져와.(~의)HTML내부글자
+        // [문법] document.getElementById('???').??? = '???';
+        // ??? 빈칸만 잘 채우면 뭐든 원하는대로 변경 가능하지만
+        // document.getElementById('???').style.color = 'red';
+        // 뒤에 ??? 빈칸 두 가지는 구글링해서 바꾸는 걸 찾아봐야 함
+
+        // 올때바밤바로 변경하기
+        document.getElementById('hi').innerHTML = '올때바밤바';
+
+        // hello에 적힌 글자 크기를 30px로 바꾸기
+        document.getElementById('hello').style.fontSize = '30px';
+    </script>
+</body>
+</html>

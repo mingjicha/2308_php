@@ -71,9 +71,45 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 4. 정상인지 확인하기 npm run dev : 컴파일
 5. npm install --save-dev vue
 6. npm install --``save-dev vue-loader 
+7. 폴더 수정
+    7-1. welcome.blade.php
+        <div id="app">
+            <App-Component></App-Component>
+        </div>
+    7-2. AppComponent.vue
+        export default {
+        name: 'AppComponent'
+        }
+    7-3. app.js
+        import AppComponent from '../components/AppComponent.vue';
+
+        createApp({
+            components: {
+                AppComponent,
+            }
+        })
+8. npm install vue-router@4
+9. npm install vuex@next --save
+10. router.js 가져오기 
+    - vue > vueroute 에서 복붙
+11. AppComponent.vue 라우터 연결
+    <div>
+        <router-view></router-view>
+    </div>
+12. web.php 라우터 연결
+    Route::get('/login', function () {
+        return view('welcome');
+    });
+
+    Route::get('/board', function () {
+        return view('welcome');
+    });
+
 
 <!-- 서버열기  -->
 php artisan serve
 
 # Laravel에서 vue관련해서 수정할 때마다 npm run dev를 해줘야 함
 귀찮다면, Laravel 서커 열고 새로운 창에서 npm run watch 켜주면 자동 업로드 됨
+
+

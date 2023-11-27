@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert창 만들기</title>
+    <link rel="stylesheet" href="01.css">
+</head>
+<body>
+    <!-- UI만드는 법
+        1. 미리 디자인해놓고 숨김
+        2. 버튼 누르거나 하면 보여줌 -->
+
+    <!-- 버튼을 눌렀을 때 Alret 등장  -->
+    <div class="alert-box" id="alert">Alret 박스</div>
+    <!-- 2. 버튼 누르거나 원할 때 js를 이용해서 보여줌 -->
+    <!-- onclick? 이 버튼을 클릭했을 때 안에 있는 자바스크립트를 실행해 주세요. -->
+    <!-- <button onclick="저거 alert 박스를 보여주셈">버튼</button> -->
+    <button onclick="document.getElementById('alert').style.display = 'block';">버튼</button>
+    <!-- 보통 js는 fucntion으로 코드를 깔끔하게 해줌 -->
+
+    <!-- 닫기버튼 만들기 -->
+    <!-- 닫기 버튼을 눌렀을 때 Alret 숨김 -->
+    <button onclick="document.getElementById('alert').style.display = 'none';">닫기</button>
+</body>
+</html>
