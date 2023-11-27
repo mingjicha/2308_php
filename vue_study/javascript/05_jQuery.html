@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 라이브러리</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- 함수를 쓰고 함수를 줄이고(파라미터) html을 줄이고(파라미터) 자바스크립트를 줄이면(jQuery) -->
+<!-- 요즘은 jQuery를 잘 사용 안 함 Html 조작을 약간 더 잘하는 React를 사용 -->
+
+<h4 id="test">안녕하세요</h4>
+<!-- <h4 id="test" style="color:red">안녕하세요</h4> -->
+<!-- <h4 class="test1">안녕하세요</h4> -->
+
+<!-- jQuery를 쓰면 html을 쉽게 변경할 수 있음 -->
+<script>
+
+    // document.querySelector('#test') 
+    // querySelector는 하나밖에 못찾음 여러개 찾을 경우 querySelectorAll을 사용하고 뒤에 ('#test')[0] 이런식으로 배열을 적어줘야 함
+    // document.getElementById('test').innerHTML = '???';
+    // Id가 test인 것을 찾아주세요. : $('#test') 
+    // Class가 test1인 것을 찾아주세요 : $('.test') 
+    $('#test').html('안녕'); // 모든 html
+    $('#test').text('안녕'); // 모든 문자
+    $('#test').css('color', 'red'); // 스타일 변경
+    $('#test').attr('src', 'dsddd.jpg'); // html 다른 거 변경하려면 ('이걸', '이렇게')
+
+    // jQuery 잘 모르겠으면 jQuery로 인생 바꾸는 법 구글 검색!ㅋㅋ
+
+</script>
+
+<!-- https://releases.jquery.com/ jquery cdn 검색해서 사용(minified) -->
+<!-- html은 읽어들일 때 위에서부터 한줄씩 읽는데 jquery가 head에 있을 경우 script가 다 다운 될 떄까지 다 멈추니까 속도가 느려짐 body 맨 아래 써주는게 좋다 -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function 함수 만들기</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- 💥주의💥
+        변경할 HTML 요소는 위에
+        조작은 JS로 밑에서 
+        이유 : HTML을 먼저 읽어야 JS로 조작 가능
+    -->
+    <div class="alert-box" id="alert">
+        <p>Alert 박스</p>
+        <button onclick="alretClose()">닫기</button>
+    </div>
+    <button onclick="알림창열기();">버튼</button>
+
+    <!-- function 문법을 사용할 때 : 긴 코드를 깔끔하게 한 단어로 치환 하고 싶을 때 사용 -->
+    <script>
+        // fucntion 어쩌구(){축약할 긴 코드}
+        // 버튼을 누르면 Alret 등장 함수
+        function 알림창열기() {
+            document.getElementById('alert').style.display = 'block';
+        }
+        // function 알림창열기(); 로 쓰면 함수를 불러와서 사용 가능
+
+        // 버튼을 누르면 Alret 닫기 함수
+        function alretClose() {
+            document.getElementById('alert').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

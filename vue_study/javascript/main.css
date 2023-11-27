@@ -6,3 +6,7 @@
     /* 1. 디자인하고 숨기기 */
     display: none;
 }
+
+.yellow-bg {
+    background: yellow;
+}

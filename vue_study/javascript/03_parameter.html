@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parameter</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <!-- 파라미터? 일명 구멍, 함수를 업그레이드 한다는 느낌 -->
+    <div class="alert-box" id="alert">
+        <p>Alert 박스</p>
+        <button onclick="알림창열기('none')">닫기</button>
+    </div>
+    <button onclick="알림창열기('block')">버튼</button>
+    <hr>
+    <!-- Alert 창 2개 만들기
+        1. 버튼1을 누르면 아이디를 입력 안 하셨어요.
+        2. 버튼2를 누르면 비번을 입력 안 하셨어요. -->
+        <!-- 아이디를 입력 안 하셨어요. -->
+        <div class="alert-box" id="alert2">
+            <p id="alertPw">아이디를 입력 안 하셨어요.</p>
+            <button onclick="alertOpen('none')">닫기</button>
+        </div>
+        <button onclick="alertOpen('block')">버튼1</button>
+        <!-- 비번을 입력 안 하셨어요. -->
+        <button onclick="alertOpen('block'), alertPw()">버튼2</button>
+
+    <script>
+        // 1. 함수에 구멍을 뚫어 놓으면
+        function 알림창열기(구멍) {
+            document.getElementById('alert').style.display = 구멍;
+        }
+        // 2. 함수를 쓸 때 () 구멍 안에 아무거나 입력 가능
+        // 알림창열기(123); // 숫자
+        // 알림창열기()를 실행하는데 구멍에 숫자 123을 넣어서 실행 
+        // function 알림창열기(구멍) {
+        //     document.getElementById('alert').style.display = 123;
+        // }
+        // 알림창열기('안녕'); // 문자
+        // 알림창열기('block');
+        // function 알림창열기(구멍) {
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+        
+        // 따라서, 파라미터를 쓰면 함수 하나로 두 가지 코드를 사용할 수 있음 -> 코드양 줄어 듦
+        // 알림창열기('block'); // alret를 보여주는 코드
+        // 알림창열기('none'); // alret를 닫아주는 코드
+
+
+        // function plus() {
+        //     2 + 1
+        // }
+        // function plus() {
+        //     2 + 2
+        // }
+        // function plus() {
+        //     2 + 3
+        // }
+        // 함수를 세개 만들 수 있지만 봤을 때 비슷한 함수라면?
+        // function plus2(구멍) {
+        //     2 + 구멍 // 구멍타고 오는 건 여기에 넣어주기
+        // }
+
+        // plus2(1); // 2 + 1
+        // plus2(2); // 2 + 2
+        // plus2(3); // 2 + 3
+
+        // 구멍이 여러개 필요한 경우?
+        // function 알림창열기(구멍, 구멍2) { // 1. 콤마로 구분, 자유 작명
+        //     document.getElementById(구멍2).style.display = 구멍;
+        //     // 2. 구멍타고 들어온 데이터는 어디에 들어가는지도 표시
+        // }
+
+        function alertOpen(a) {
+            document.getElementById('alert2').style.display = a;
+        }
+        function alertPw() {
+            document.getElementById('alertPw').innerHTML = '비번을 입력 안 하셨어요.';
+        }
+    </script>
+</body>
+</html>

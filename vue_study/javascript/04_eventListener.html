@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event Listener</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p id="title">Alert 박스</p>
+        <button onclick="closeAlert()"> X </button>
+    </div>
+    <!-- 버튼1. 아이디를 입력 안 하셨어요. -->
+    <!-- <button onclick="1. p태그 제목 바꾸기 2. 알림창 열기">버튼1</button> -->
+    <button onclick="openAlert('아이디를 입력 안 하셨어요.')">버튼1</button>
+    <!-- 버튼2. 비번을 입력 안 하셨어요. -->
+    <button onclick="openAlert('비번을 입력 안 하셨어요')">버튼2</button>
+
+    <hr>
+
+    <!-- onclick을 사용하지 않고 js 기능 개발하기 👉EventListener-->
+    <div class="alert-box" id="alert">
+        <p id="title">Alert 박스</p>
+        <button id="close"> X </button>
+    </div>
+    <button onclick="openAlert('아이디를 입력 안 하셨어요.')">버튼1</button>
+    <button onclick="openAlert('비번을 입력 안 하셨어요')">버튼2</button>
+
+    <script>
+
+        // function openAlert1() {
+        //     // 1. 제목 바꾸기
+        //     // ✔ getElementsByClassName 는 class명이 title인 것을 전부 찾고 찾은 것 중 x번째꺼를 선택해라
+        //     document.getElementsByClassName('title')[0].innerHTML = '아이디를 입력 안 하셨어요.';
+        //     // 2. 알림창 열기
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+        // function openAlert2() {
+        //     document.getElementsByClassName('title')[0].innerHTML = '비번을 입력 안 하셨어요.';
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+
+        // 파라미터를 사용해서 함수 만들기
+        function openAlert(구멍) {
+            document.getElementById('title').innerHTML = 구멍;
+            document.getElementById('alert').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('alert').style.display = 'none';
+        }
+
+        // EventListener ❗ 를 사용하면 Html에서 깔끔하게 개발이 가능
+        document.getElementById('close').addEventListener('click', function() {
+            // 왼쪽에 있는 요소가(getElementById) 클릭('click' : *event라고 부름)이 되면(addEventListener) 이 코드 실행해 주세요.
+            // ✨ event의 여러가지 : click, keydown, scroll, mouseover 등 (20개 이상 있음)
+            document.getElementById('alert').style.display = 'none';
+            // Id가 alert인 걸 숨김 처리
+        });
+    </script>
+</body>
+</html>
