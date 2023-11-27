@@ -18,6 +18,11 @@ Route::get('/', function () {
     return view('welcome')->with('data', json_encode($data));
 });
 
+Route::get('/home', function () {
+    $data = ['name' => '메인', 'id' => 1];
+    return view('welcome')->with('data', json_encode($data));
+});
+
 Route::get('/login', function () {
     $data = ['name' => '로그인', 'id' => 1];
     return view('welcome')->with('data', json_encode($data));
