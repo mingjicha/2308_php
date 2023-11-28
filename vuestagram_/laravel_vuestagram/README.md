@@ -37,3 +37,8 @@ routes/
 4. php artisan serve (서버 열어서 {"code":"E03"} 에러코드 확인)
 5. php artisan migrate (DB 만들기) -> DB_DATABASE=laravel_test 라고 env에서 설정함
 6. php artisan db:seed (seeder 생성)
+7. npm install (node_modules 생성)
+-------------node_modules에 설치 중
+8. npm install vuex@next --save (vue 설치)
+9. npm install axios (axios 설치)
+10. npm install vue-router@4 (router 설치)
