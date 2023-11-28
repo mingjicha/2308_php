@@ -58,7 +58,7 @@ const store = createStore({
 	actions: {
 		// 초기 게시글 데이터 획득 ajax처리
 		actionGetBoardList(context) {
-			const url = 'http://112.222.157.156:6006/api/boards';
+			const url = '/api/boards';
 			const header = {
 				headers: {
 					'Authorization': 'Bearer meerkat'
@@ -74,20 +74,26 @@ const store = createStore({
 		},
 		// 글작성 처리
 		actionPostBoardAdd(context) {
-			const url = 'http://112.222.157.156:6006/api/boards';
+			const url = '/api/boards';
 			const header = {
 				headers: {
 					'Authorization': 'Bearer meerkat',
 					'Content-Type': 'multipart/form-data',
 				}
 			};
-			const data = {
-				name: '박병주',
-				img: context.state.postFileData,
-				content: document.getElementById('content').value,
-			};
+			// const data = {
+			// 	name: '차민지',
+			// 	img: context.state.postFileData,
+			// 	content: document.getElementById('content').value,
+			// };
 
-			axios.post(url, data, header)
+			const formData = new FormData();
+			formData.append('name', '차민지');
+			formData.append('img', context.state.postFileData);
+			formData.append('content', document.getElementById('content').value);
+			
+
+			axios.post(url, formData, header)
 			.then(res => {
 				// 작성글 데이터 저장
 				context.commit('setUnshiftBoard', res.data);
@@ -105,7 +111,7 @@ const store = createStore({
 		},
 		// 더보기
 		actionGetBoardItem(context) {
-			const url = 'http://112.222.157.156:6006/api/boards/' + context.state.lastBoardId;
+			const url = '/api/boards/' + context.state.lastBoardId;
 			const header = {
 				headers: {
 					'Authorization': 'Bearer meerkat',

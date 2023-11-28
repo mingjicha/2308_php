@@ -30,7 +30,7 @@ routes/
     web.php
 .env.example        Authorization용 키(APP_AUTHORIZATION_KEY) 추가
 
-[설치 순서 PowerShell]
+[설치 순서 PowerShell사용]
 1. laravel_vuestagram 에 env 복붙하기
 2. composer install 설치하기 (vendor)
 3. php artisan key:generate (라라벨 앱키 생성)
@@ -39,6 +39,8 @@ routes/
 6. php artisan db:seed (seeder 생성)
 7. npm install (node_modules 생성)
 -------------node_modules에 설치 중
-8. npm install vuex@next --save (vue 설치)
+8. npm install vuex@next --save (vuex 설치)
 9. npm install axios (axios 설치)
 10. npm install vue-router@4 (router 설치)
+11. npm install --save-dev vue (laravel에 vue.js 설치)
+12. npm install --``save-dev vue-loader (오류 방지용)
