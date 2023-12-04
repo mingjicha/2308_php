@@ -19423,53 +19423,149 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "header"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", {
+  "class": "navbar navbar-expand-lg navbar-light bg-light"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "container-fluid"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "navbar-brand",
+  href: "#"
+}, "메일크림쑥마트🎅"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "navbar-toggler",
+  type: "button",
+  "data-bs-toggle": "collapse",
+  "data-bs-target": "#navbarSupportedContent",
+  "aria-controls": "navbarSupportedContent",
+  "aria-expanded": "false",
+  "aria-label": "Toggle navigation"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "navbar-toggler-icon"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "collapse navbar-collapse",
+  id: "navbarSupportedContent"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+  "class": "navbar-nav me-auto mb-2 mb-lg-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "nav-item"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "nav-link active",
+  "aria-current": "page",
+  href: "#"
+}, "프래잰또🎁")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 달력 띄우기 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "nav-item"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "nav-link",
+  href: "#"
+}, "12월 25일🎄")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+  "class": "nav-item dropdown"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "nav-link dropdown-toggle",
+  href: "#",
+  id: "navbarDropdown",
+  role: "button",
+  "data-bs-toggle": "dropdown",
+  "aria-expanded": "false"
+}, " 울면 선물이 없어요😟 "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+  "class": "dropdown-menu",
+  "aria-labelledby": "navbarDropdown"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "dropdown-item",
+  href: "#"
+}, "🐶 아싸 난 안 울었다")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
+  "class": "dropdown-divider"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "dropdown-item",
+  href: "#"
+}, "🦝 엉엉 나도 받을래")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
+  "class": "dropdown-divider"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "dropdown-item",
+  href: "#"
+}, "🐱 산타 그런거 없어")])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  "class": "d-flex"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  "class": "form-control me-2",
+  type: "search",
+  placeholder: "찾을 수 있으면 찾아보··",
+  "aria-label": "Search"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  "class": "btn btn-outline-dark",
+  type: "submit"
+}, "Search")])])])])], -1 /* HOISTED */);
+var _hoisted_2 = {
+  "class": "main"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  "class": "logo",
-  alt: "Vue logo",
-  src: "/css/logo.png"
-})], -1 /* HOISTED */);
 var _hoisted_3 = {
-  "class": "footer"
+  "class": "container mt-5"
 };
 var _hoisted_4 = {
-  "class": "footer-button-store"
+  "class": "row d-flex justify-content-center"
 };
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-  "for": "file",
-  "class": "label-store"
-}, "+", -1 /* HOISTED */);
+var _hoisted_5 = {
+  "class": "col-md-6"
+};
+var _hoisted_6 = {
+  "class": "card px-5 py-5",
+  id: "form1"
+};
+var _hoisted_7 = {
+  key: 0,
+  "class": "form-data"
+};
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "🍪내가 만든 이름", -1 /* HOISTED */);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "invalid-feedback"
+}, "이름이 틀렸지라", -1 /* HOISTED */);
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "🍪내가 만든 비번", -1 /* HOISTED */);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "invalid-feedback"
+}, "비번이 틀렸지라", -1 /* HOISTED */);
+var _hoisted_12 = {
+  "class": "mb-3"
+};
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "success-data"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "text-center d-flex flex-column"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "bx bxs-badge-check"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text-center"
+}, "로그인을❓ 성공했당❗")])], -1 /* HOISTED */);
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "footer"
+}, null, -1 /* HOISTED */);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_ContainerComponent = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("ContainerComponent");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 헤더 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", null, [_ctx.$store.state.flgTabUI !== 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
-    key: 0,
-    "class": "header-button header-button-left",
-    onClick: _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.$store.commit('setFlgTabUI', 0);
+  var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 헤더 "), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 컨테이너 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <ContainerComponent></ContainerComponent> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 더보기 버튼 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <button \r\n    @click=\"$store.dispatch('actionGetBoardItem')\"\r\n    v-if=\"$store.state.flgBtnMoreView && $store.state.flgTabUI === 0\">더보기</button> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 메인 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [!_ctx.submitted ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["forms-inputs mb-4", {
+      'has-error': _ctx.emailBlured && !_ctx.validEmail(_ctx.email)
+    }])
+  }, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    autocomplete: "off",
+    type: "text",
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.email = $event;
     })
-  }, "취소")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_2, _ctx.$store.state.flgTabUI === 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
-    key: 1,
-    onClick: _cache[1] || (_cache[1] = function ($event) {
-      return $options.addBoard();
-    }),
-    "class": "header-button header-button-right"
-  }, "작성")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 컨테이너 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ContainerComponent), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 더보기 버튼 "), _ctx.$store.state.flgBtnMoreView && _ctx.$store.state.flgTabUI === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
-    key: 0,
-    onClick: _cache[2] || (_cache[2] = function ($event) {
-      return _ctx.$store.dispatch('actionGetBoardItem');
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.email]]), _hoisted_9], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["forms-inputs mb-4", {
+      'has-error': _ctx.passwordBlured && !_ctx.validPassword(_ctx.password)
+    }])
+  }, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    autocomplete: "off",
+    type: "password",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return _ctx.password = $event;
     })
-  }, "더보기")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 푸터 "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    onChange: _cache[3] || (_cache[3] = function () {
-      return $options.updateImg && $options.updateImg.apply($options, arguments);
-    }),
-    accept: "image/*",
-    type: "file",
-    id: "file",
-    "class": "input-file"
-  }, null, 32 /* NEED_HYDRATION */)])])], 64 /* STABLE_FRAGMENT */);
+  }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, _ctx.password]]), _hoisted_11], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    onClick: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
+    }, ["prevent"])),
+    "class": "btn btn-dark w-100"
+  }, "Login")]), _hoisted_13])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" 푸터 "), _hoisted_14], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -19774,7 +19870,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_public_css_common_css__WEBPACK_IMPORTED_MODULE_1__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#app {\n  font-family: Avenir, Helvetica, Arial, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  text-align: center;\n  color: #2c3e50;\n  margin-top: 60px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#app {\r\n  font-family: Avenir, Helvetica, Arial, sans-serif;\r\n  -webkit-font-smoothing: antialiased;\r\n  -moz-osx-font-smoothing: grayscale;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -19798,7 +19894,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n\tmargin: 0;\n}\n\n/* App */\nul  {\n\tpadding: 0 20px;\n\tlist-style-type: none;\n}\n.logo {\n\twidth: 40px;\n\tmargin: auto;\n\tdisplay: block;\n\tposition: absolute;\n\tleft: 0;\n\tright: 0;\n\ttop: 10px;\n}\n.header {\n\twidth: 100%;\n\theight: 60px;\n\tbackground-color: black;\n\tposition: fixed;\n\ttop: 0;\n\tz-index: 99;\n}\n.header-button {\n\tfont-size: 1.4em;\n\tcolor: white;\n\twidth: 50px;\n\tcursor: pointer;\n}\n.header-button-left {\n\tfloat: left;\n}\n.header-button-right {\n\tfloat: right;\n}\n.footer {\n\twidth: 100%;\n\theight: 60px;\n\tbackground-color: black;\n\tposition: sticky;\n\tbottom: 0;\n}\n.footer-button-store {\n\tcolor: white;\n\twidth: 80px;\n\tmargin: auto;\n\ttext-align: center;\n\tfont-size: 1.4em;\n\tpadding-top: 15px;\n}\n.input-file {\n\tdisplay: none;\n}\n.label-store {\n\tcursor: pointer;\n}\n\n/* PostComponent */\n.post {\n\twidth: 100%;\n\tpadding: 10px;\n\tbox-sizing: border-box;\n}\n.post-img {\n\twidth: 100%;\n\theight: 400px;\n\tbackground-position: center;\n\tbackground-size: cover;\n\tdisplay: inline-block;\n}\n.post-content {\n\ttext-align: left;\n}\n\n/* ConteinerComponent */\n.upload-img{\n\twidth: 100%;\n\theight: 400px;\n\tbackground: black;\n\tbackground-size : cover;\n}\n.filter-box{\n\toverflow-x:scroll;\n\twhite-space: nowrap;\n}\n.filter {\n\twidth: 100px;\n\theight: 100px;\n\tbackground-color: black;\n\tmargin: 10px 10px 10px auto;\n\tpadding: 8px;\n\tdisplay: inline-block;\n\tcolor : white;\n\tbackground-size: cover;\n\tbackground-position: center;\n}\n.write-box {\n\tborder: none;\n\twidth: 70%;\n\theight: 50px;\n\tpadding: 15px;\n\tmargin: auto;\n\toutline: none;\n\tresize: none;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body { \r\n    background: rgb(226, 200, 197);\r\n}\r\n.card { \r\n    border: none;height: 320px;\r\n}\r\n.forms-inputs { \r\n    position: relative;\r\n}\r\n.forms-inputs span { \r\n    position: absolute;\r\n    top:-18px;\r\n    left: 10px;\r\n    background-color: #fff;\r\n    padding: 5px 10px;\r\n    font-size: 15px;\r\n}\r\n.forms-inputs input { \r\n    height: 50px;\r\n    border: 2px solid #eee;\r\n}\r\n.forms-inputs input:focus {\r\n    box-shadow: none;\r\n    outline: none;\r\n    border: 2px solid #000;\r\n}\r\n.btn { height: 50px;\r\n} \r\n.success-data {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n.bxs-badge-check { \r\n    font-size: 90px}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
